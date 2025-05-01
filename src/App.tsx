@@ -1,10 +1,12 @@
 import Footer from "./pages/Footer";
 import UpperFooter from "./pages/UpperFooter";
 import app_banner from "./assets/app_banner.png";
+import VehicleCareBenifits from "./pages/VehicleCareBenifits";
 
 function App() {
   return (
     <>
+      <VehicleCareBenifits />
       <a
         href="https://apps.apple.com/in/app/vehiclecare/id1634342039?mt=8"
         className="w-full flex justify-center px-4"
