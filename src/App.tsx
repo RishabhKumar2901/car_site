@@ -2,10 +2,12 @@ import Footer from "./pages/Footer";
 import UpperFooter from "./pages/UpperFooter";
 import app_banner from "./assets/app_banner.png";
 import VehicleCareBenifits from "./pages/VehicleCareBenifits";
+import BrandsCarousel from "./pages/BrandsCarousel";
 
 function App() {
   return (
     <div className="bg-[#fafafb]">
+      <BrandsCarousel />
       <VehicleCareBenifits />
       <a
         href="https://apps.apple.com/in/app/vehiclecare/id1634342039?mt=8"
