@@ -29,7 +29,7 @@ const VehicleCareBenifits = () => {
 
       {vehicleCareBenifitsData?.map((item, index) => (
         <div
-          className="flex items-center text-center w-3/4 justify-center ml-2"
+          className="flex items-center text-center w-3/4 justify-center ml-2 hover:bg-[#eceded]"
           key={index}
         >
           <div className="text-base font-[700] text-[#282c30] flex items-center border-[1px] border-[#f1f3f2] py-3 px-8 w-5/6 justify-center">
