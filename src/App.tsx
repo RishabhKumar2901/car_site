@@ -5,7 +5,7 @@ import VehicleCareBenifits from "./pages/VehicleCareBenifits";
 
 function App() {
   return (
-    <>
+    <div className="bg-[#fafafb]">
       <VehicleCareBenifits />
       <a
         href="https://apps.apple.com/in/app/vehiclecare/id1634342039?mt=8"
@@ -15,7 +15,7 @@ function App() {
       </a>
       <UpperFooter />
       <Footer />
-    </>
+    </div>
   );
 }
 
