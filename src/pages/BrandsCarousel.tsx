@@ -88,8 +88,8 @@ const TrueInfiniteCarousel: React.FC = () => {
   };
 
   return (
-    <div className="w-full flex justify-center">
-      <div className="relative overflow-hidden bg-white py-6 w-[98%]">
+    <div className="w-full flex justify-center mb-10 mt-10">
+      <div className="relative overflow-hidden bg-white py-6 w-[98%]" style={{ boxShadow: "0 0 20px rgba(0, 0, 0, 0.1)" }}>
         <button
           onClick={manualPrev}
           className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 bg-[#dbdbdb] shadow rounded-full"
@@ -97,7 +97,7 @@ const TrueInfiniteCarousel: React.FC = () => {
           <img src={left_arrow} alt="Left" className="w-6 h-6" />
         </button>
 
-        <div className="overflow-hidden w-full px-10">
+        <div className="overflow-hidden w-full px-10 py-2">
           <div
             className="flex"
             ref={trackRef}

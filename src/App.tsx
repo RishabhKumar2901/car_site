@@ -3,10 +3,12 @@ import UpperFooter from "./pages/UpperFooter";
 import app_banner from "./assets/app_banner.png";
 import VehicleCareBenifits from "./pages/VehicleCareBenifits";
 import BrandsCarousel from "./pages/BrandsCarousel";
+import OfferedServices from "./pages/OfferedServices";
 
 function App() {
   return (
     <div className="bg-[#fafafb]">
+      <OfferedServices />
       <BrandsCarousel />
       <VehicleCareBenifits />
       <a
