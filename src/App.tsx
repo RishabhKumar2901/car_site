@@ -4,10 +4,12 @@ import app_banner from "./assets/app_banner.png";
 import VehicleCareBenifits from "./pages/VehicleCareBenifits";
 import BrandsCarousel from "./pages/BrandsCarousel";
 import OfferedServices from "./pages/OfferedServices";
+import Navbar from "./pages/Navbar";
 
 function App() {
   return (
     <div className="bg-[#fafafb]">
+      <Navbar />
       <OfferedServices />
       <BrandsCarousel />
       <VehicleCareBenifits />

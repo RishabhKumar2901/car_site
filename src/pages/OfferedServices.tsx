@@ -17,12 +17,22 @@ const OfferedServices = () => {
         more.
       </div>
       <div className="flex w-3/4 flex-wrap justify-center items-center">
-      {offeredServicesData?.map((item, index) => (
-        <div className="flex flex-col bg-[#e8e8e8] rounded-lg px-6 py-3 border-2 border-[#d6d7d6] mx-2 my-3 items-center justify-center w-[13.5%] flex-wrap" key={index}>
-          <img src={item?.imageUrl} alt={`Service${index}`} className="w-28 h-28" />
-          <div className="text-[#212428] font-semibold whitespace-nowrap">{item?.serviceName}</div>
-        </div>
-      ))}
+        {offeredServicesData?.map((item, index) => (
+          <a
+            className="flex flex-col bg-[#e8e8e8] rounded-lg px-6 lg:px-0 py-3 border-2 border-[#d6d7d6] mx-2 my-3 items-center justify-center lg:w-[13.5%] flex-wrap"
+            key={index}
+            href={item?.directedUrl}
+          >
+            <img
+              src={item?.imageUrl}
+              alt={`Service${index}`}
+              className="w-28 h-28"
+            />
+            <div className="text-[#212428] font-semibold">
+              {item?.serviceName}
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   );
