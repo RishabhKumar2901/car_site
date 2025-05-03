@@ -1,10 +1,10 @@
-import Footer from "./pages/Footer";
-import UpperFooter from "./pages/UpperFooter";
+import Footer from "./components/Footer";
+import UpperFooter from "./components/UpperFooter";
 import app_banner from "./assets/app_banner.png";
-import VehicleCareBenifits from "./pages/VehicleCareBenifits";
-import BrandsCarousel from "./pages/BrandsCarousel";
-import OfferedServices from "./pages/OfferedServices";
-import Navbar from "./pages/Navbar";
+import VehicleCareBenifits from "./components/VehicleCareBenifits";
+import BrandsCarousel from "./components/BrandsCarousel";
+import OfferedServices from "./components/OfferedServices";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
