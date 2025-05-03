@@ -5,6 +5,7 @@ import VehicleCareBenifits from "./components/VehicleCareBenifits";
 import BrandsCarousel from "./components/BrandsCarousel";
 import OfferedServices from "./components/OfferedServices";
 import Navbar from "./components/Navbar";
+import CustomerReviews from "./components/CustomerReviews";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <OfferedServices />
       <BrandsCarousel />
       <VehicleCareBenifits />
+      <CustomerReviews />
       <a
         href="https://apps.apple.com/in/app/vehiclecare/id1634342039?mt=8"
         className="w-full flex justify-center px-4"

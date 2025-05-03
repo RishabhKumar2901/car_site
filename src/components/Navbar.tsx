@@ -26,9 +26,9 @@ const Navbar: React.FC = () => {
   return (
     <div>
       <div className="bg-[#f9f9fb] w-full py-4 flex justify-around items-center font-montserrat border-b-[1px] border-[#f3f2f2] fixed z-50 top-0">
-        <div>
-          <img src={full_logo} alt="Full Logo" className="w-40 h-10" />
-        </div>
+        <a href="#">
+          <img src={full_logo} alt="Full Logo" className="w-[10.5rem] h-[2.6rem]" />
+        </a>
         <div className="text-sm font-semibold justify-between items-center w-2/5 hidden xl:flex">
           <a className="cursor-pointer hover:text-[#ec262e]" href="#">
             Car Service
