@@ -1,13 +1,15 @@
 import { useEffect, useRef, useState } from "react";
-import { brandsCarouselData } from "../static/brandsCarouselData";
 import left_arrow from "../assets/left_arrow.svg";
 import right_arrow from "../assets/right_arrow.svg";
+import { bookCarServiceSliderData } from "../static/bookCarServiceSliderData";
 
-const ITEM_WIDTH = 230;
+const ITEM_WIDTH = 697;
+const ITEM_HEIGHT = 365;
 
-const BrandsCarousel: React.FC = () => {
-  const [logos, setLogos] = useState(brandsCarouselData);
+const BookCarServiceSlider: React.FC = () => {
+  const [logos, setLogos] = useState(bookCarServiceSliderData);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
   const autoScrollRef = useRef<NodeJS.Timeout | null>(null);
   const hasUserInteracted = useRef(false);
@@ -33,6 +35,7 @@ const BrandsCarousel: React.FC = () => {
         const rest = prev.slice(1);
         return [...rest, first];
       });
+      setCurrentIndex((prev) => (prev + 1) % bookCarServiceSliderData.length);
 
       if (trackRef.current) {
         trackRef.current.style.transition = "none";
@@ -44,12 +47,12 @@ const BrandsCarousel: React.FC = () => {
   useEffect(() => {
     autoScrollRef.current = setInterval(() => {
       if (!hasUserInteracted.current) shiftLeft();
-    }, 2000);
+    }, 3000);
 
     return () => {
       clearAutoScroll();
     };
-  }, []);
+  }, [logos]);
 
   const manualNext = () => {
     if (!isAnimating) {
@@ -71,6 +74,9 @@ const BrandsCarousel: React.FC = () => {
       const rest = prev.slice(0, -1);
       return [last, ...rest];
     });
+    setCurrentIndex((prev) =>
+      (prev - 1 + bookCarServiceSliderData.length) % bookCarServiceSliderData.length
+    );
 
     if (trackRef.current) {
       trackRef.current.style.transition = "none";
@@ -87,32 +93,52 @@ const BrandsCarousel: React.FC = () => {
     }, 20);
   };
 
+  const handleDotClick = (targetIdx: number) => {
+    hasUserInteracted.current = true;
+    clearAutoScroll();
+    const shift = (targetIdx - currentIndex + bookCarServiceSliderData.length) % bookCarServiceSliderData.length;
+    let updated = [...logos];
+    for (let i = 0; i < shift; i++) {
+      const first = updated.shift();
+      if (first) updated.push(first);
+    }
+    setLogos(updated);
+    setCurrentIndex(targetIdx);
+  };
+
   return (
-    <div className="w-full flex justify-center mb-10 mt-10">
-      <div className="relative overflow-hidden bg-white py-6 w-[98%]" style={{ boxShadow: "0 0 20px rgba(0, 0, 0, 0.1)" }}>
+    <div className="w-1/2 flex flex-col items-center relative">
+      <div
+        className="relative overflow-hidden bg-white w-[697px] h-[365px] rounded-xl"
+        style={{ boxShadow: "0 0 20px rgba(0, 0, 0, 0.1)" }}
+      >
         <button
           onClick={manualPrev}
           className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 bg-[#dbdbdb] shadow rounded-full"
         >
-          <img src={left_arrow} alt="Left" className="w-6 h-6" />
+          <img src={left_arrow} alt="Left" className="w-4 h-4" />
         </button>
 
-        <div className="overflow-hidden w-full px-10 py-2">
+        <div className="overflow-hidden w-full h-full">
           <div
             className="flex"
             ref={trackRef}
-            style={{ width: `${logos?.length * ITEM_WIDTH}px` }}
+            style={{ width: `${logos.length * ITEM_WIDTH}px` }}
           >
             {logos?.map((logo, idx) => (
               <div
                 key={`${logo?.name}-${idx}`}
                 className="flex items-center justify-center"
-                style={{ width: ITEM_WIDTH, flexShrink: 0 }}
+                style={{
+                  width: `${ITEM_WIDTH}px`,
+                  height: `${ITEM_HEIGHT}px`,
+                  flexShrink: 0,
+                }}
               >
                 <img
                   src={logo?.src}
                   alt={logo?.name}
-                  className="w-36 h-28 object-contain"
+                  className="object-cover w-full h-full"
                 />
               </div>
             ))}
@@ -123,11 +149,25 @@ const BrandsCarousel: React.FC = () => {
           onClick={manualNext}
           className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-2 bg-[#dbdbdb] shadow rounded-full"
         >
-          <img src={right_arrow} alt="Right" className="w-6 h-6" />
+          <img src={right_arrow} alt="Right" className="w-4 h-4" />
         </button>
+      </div>
+
+      <div className="flex justify-center mt-4 space-x-2 absolute bottom-5">
+        {bookCarServiceSliderData.map((_, idx) => (
+          <span
+            key={idx}
+            className={`w-2 h-2 rounded-full cursor-pointer transition-all duration-300 ${
+              currentIndex % bookCarServiceSliderData.length === idx
+                ? "scale-150 bg-gray-400"
+                : "bg-gray-400"
+            }`}
+            onClick={() => handleDotClick(idx)}
+          />
+        ))}
       </div>
     </div>
   );
 };
 
-export default BrandsCarousel;
+export default BookCarServiceSlider;

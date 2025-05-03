@@ -6,11 +6,13 @@ import BrandsCarousel from "./components/BrandsCarousel";
 import OfferedServices from "./components/OfferedServices";
 import Navbar from "./components/Navbar";
 import CustomerReviews from "./components/CustomerReviews";
+import BookCarService from "./components/BookCarService";
 
 function App() {
   return (
     <div className="bg-[#fafafb]">
       <Navbar />
+      <BookCarService />
       <OfferedServices />
       <BrandsCarousel />
       <VehicleCareBenifits />

@@ -2,7 +2,7 @@ import { offeredServicesData } from "../static/offeredServicesData";
 
 const OfferedServices = () => {
   return (
-    <div className="flex flex-col justify-center items-center font-montserrat text-center pt-32">
+    <div className="flex flex-col justify-center items-center font-montserrat text-center mt-10">
       <div className="font-semibold text-4xl text-[#222222]">
         {" "}
         Services We Offer
