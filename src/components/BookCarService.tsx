@@ -2,7 +2,7 @@ import BookCarServiceSlider from "./BookCarServiceSlider";
 
 const BookCarService = () => {
   return (
-    <div className="pt-32 font-montserrat flex justify-center">
+    <div className="pt-32 font-montserrat flex justify-center flex-wrap lg:space-x-10">
       <div className="flex flex-col">
         <div className="text-[2rem] font-bold">
           Book the Best{" "}
@@ -30,7 +30,9 @@ const BookCarService = () => {
           Get Quote
         </button>
       </div>
+      <div className="mt-4 xl:mt-0">
       <BookCarServiceSlider />
+      </div>
     </div>
   );
 };

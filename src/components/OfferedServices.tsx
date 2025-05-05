@@ -3,11 +3,11 @@ import { offeredServicesData } from "../static/offeredServicesData";
 const OfferedServices = () => {
   return (
     <div className="flex flex-col justify-center items-center font-montserrat text-center mt-10">
-      <div className="font-semibold text-4xl text-[#222222]">
+      <div className="font-semibold text-2xl lg:text-4xl text-[#222222]">
         {" "}
         Services We Offer
       </div>
-      <div className="font-normal text-base text-[#5c5c5d] my-5 w-[46%]">
+      <div className="font-normal text-base text-[#5c5c5d] my-5 w-[46%] hidden lg:block">
         Find the best service packages for your car. Select from a wide range of
         car services, from general service to{" "}
         <a href="#" className="text-[#f04046]">

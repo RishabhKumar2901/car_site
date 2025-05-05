@@ -3,8 +3,8 @@ import left_arrow from "../assets/left_arrow.svg";
 import right_arrow from "../assets/right_arrow.svg";
 import { bookCarServiceSliderData } from "../static/bookCarServiceSliderData";
 
-const ITEM_WIDTH = 697;
-const ITEM_HEIGHT = 365;
+const ITEM_WIDTH = 43.563;
+const ITEM_HEIGHT = 22.813;
 
 const BookCarServiceSlider: React.FC = () => {
   const [logos, setLogos] = useState(bookCarServiceSliderData);
@@ -25,7 +25,7 @@ const BookCarServiceSlider: React.FC = () => {
     setIsAnimating(true);
     if (trackRef.current) {
       trackRef.current.style.transition = "transform 0.5s ease-in-out";
-      trackRef.current.style.transform = `translateX(-${ITEM_WIDTH}px)`;
+      trackRef.current.style.transform = `translateX(-${ITEM_WIDTH}rem)`;
     }
 
     setTimeout(() => {
@@ -80,7 +80,7 @@ const BookCarServiceSlider: React.FC = () => {
 
     if (trackRef.current) {
       trackRef.current.style.transition = "none";
-      trackRef.current.style.transform = `translateX(-${ITEM_WIDTH}px)`;
+      trackRef.current.style.transform = `translateX(-${ITEM_WIDTH}rem)`;
     }
 
     setTimeout(() => {
@@ -107,9 +107,9 @@ const BookCarServiceSlider: React.FC = () => {
   };
 
   return (
-    <div className="w-1/2 flex flex-col items-center relative">
+    <div className="flex flex-col items-center relative">
       <div
-        className="relative overflow-hidden bg-white w-[697px] h-[365px] rounded-xl"
+        className={`relative overflow-hidden bg-white w-[${ITEM_WIDTH}rem] h-[${ITEM_HEIGHT}rem] rounded-xl`}
         style={{ boxShadow: "0 0 20px rgba(0, 0, 0, 0.1)" }}
       >
         <button
@@ -130,8 +130,8 @@ const BookCarServiceSlider: React.FC = () => {
                 key={`${logo?.name}-${idx}`}
                 className="flex items-center justify-center"
                 style={{
-                  width: `${ITEM_WIDTH}px`,
-                  height: `${ITEM_HEIGHT}px`,
+                  width: `${ITEM_WIDTH}rem`,
+                  height: `${ITEM_HEIGHT}rem`,
                   flexShrink: 0,
                 }}
               >
