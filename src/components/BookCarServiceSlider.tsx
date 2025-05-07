@@ -123,7 +123,7 @@ const BookCarServiceSlider: React.FC = () => {
           <div
             className="flex"
             ref={trackRef}
-            style={{ width: `${logos.length * ITEM_WIDTH}px` }}
+            style={{ width: `${ITEM_WIDTH}rem` }}
           >
             {logos?.map((logo, idx) => (
               <div
@@ -138,7 +138,7 @@ const BookCarServiceSlider: React.FC = () => {
                 <img
                   src={logo?.src}
                   alt={logo?.name}
-                  className="object-cover w-full h-full"
+                  className="object-contain w-full h-full"
                 />
               </div>
             ))}
