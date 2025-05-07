@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import { upperFooterData } from "../static/upperFooterData";
 
 const UpperFooter = () => {
+  const navigate = useNavigate();
 
   return (
     <div className="bg-[#393839] font-montserrat text-base font-light">
@@ -17,7 +19,10 @@ const UpperFooter = () => {
             </div>
             {data?.page?.map((pageItem, pageIndex) => (
               <div className="text-white cursor-pointer mt-2" key={pageIndex}>
-                <a href={pageItem?.link}>{pageItem?.to}</a>
+                {/* <a href={pageItem?.link}>{pageItem?.to}</a> */}
+                <div onClick={() => navigate(pageItem?.link)}>
+                  {pageItem?.to}
+                </div>
               </div>
             ))}
           </div>
