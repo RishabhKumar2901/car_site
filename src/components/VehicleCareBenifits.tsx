@@ -5,72 +5,61 @@ import { vehicleCareBenifitsData } from "../static/vehicleCareBenifitsData";
 
 const VehicleCareBenifits = () => {
   return (
-    <div className="flex flex-col items-center font-montserrat mb-10">
-      <div className="flex items-center text-center w-3/4 justify-center ml-2 bg-[#fefffe]">
-        <div className="text-3xl font-[700] text-[#282c30] flex items-center border-[1px] border-[#f9f9fb] py-3 px-8 w-5/6 justify-center">
-          Vehicle Care <br /> Benifits
-        </div>
-        <div className="text-base font-[700] text-[#282c30] flex items-center border-[1px] border-[#f9f9fb] pt-3 pb-4 px-2 w-4/12">
-          <div className="text-lg font-bold bg-[#6c747c] py-5 px-[3.7rem] text-nowrap text-white">
-            Local Mechanic
+    <div className="flex flex-col items-center font-montserrat mb-10 w-full px-2">
+      <div className="flex flex-col w-full max-w-[1100px]">
+        <div className="flex text-center justify-center bg-[#fefffe] w-full">
+          <div className="text-xl md:text-3xl sm:text-2xl font-[700] text-[#282c30] flex items-center justify-center border border-[#f8fbfb] py-4 px-2 w-[32%]">
+            Vehicle Care <br /> Benifits
+          </div>
+          <div className="border border-[#f8fbfb] w-[18%] flex items-center justify-center md:p-2">
+            <div className="text-sm sm:text-lg font-bold bg-[#6c747c] w-full py-5 text-white text-wrap lg:text-nowrap text-center">
+              Local Mechanic
+            </div>
+          </div>
+          <div className="border border-[#f8fbfb] w-[30%] flex items-center justify-center md:p-2">
+            <div className="text-sm sm:text-lg font-bold bg-[#6c747c] w-full py-5 text-white text-wrap lg:text-nowrap text-center">
+              Authorized Service Center
+            </div>
+          </div>
+          <div className="border border-[#f8fbfb] w-[20%] flex items-center justify-center md:p-2">
+            <div className="text-sm sm:text-lg font-bold bg-[#ed1d25] w-full py-5 text-white text-wrap lg:text-nowrap text-center">
+              <span className="hidden md:block">Vehiclecare</span>
+              <span className="md:hidden">VC</span>
+            </div>
           </div>
         </div>
-        <div className="text-base font-[700] text-[#282c30] flex items-center border-[1px] border-[#f9f9fb] pt-3 pb-4 px-2 w-2/5">
-          <div className="text-lg font-bold bg-[#6c747c] py-5 px-[3.42rem] text-white text-nowrap">
-            Authorized Service Center
-          </div>
-        </div>
-        <div className="text-base font-[700] text-[#282c30] flex items-center border-[1px] border-[#f9f9fb] pt-3 pb-4 px-2 w-1/4">
-          <div className="text-lg font-bold bg-[#ed1d25] py-5 px-[3.89rem] text-white text-nowrap">
-            Vehiclecare
-          </div>
-        </div>
-      </div>
 
-      {vehicleCareBenifitsData?.map((item, index) => (
-        <div
-          className="flex items-center text-center w-3/4 justify-center ml-2 hover:bg-[#eceded] bg-[#fefffe]"
-          key={index}
-        >
-          <div className="text-base font-[700] text-[#282c30] flex items-center border-[1px] border-[#f1f3f2] py-3 px-8 w-5/6 justify-center">
-            <img src={item?.imageUrl} alt="Benifit" className="w-5 h-5" />
-            &nbsp;{item?.benifit}
-          </div>
+        {vehicleCareBenifitsData?.map((item, index) => (
           <div
-            className={`text-base font-[700] text-[#282c30] flex items-center border-[1px] border-[#f1f3f2] ${
-              item?.localMechanic ? "py-2.5" : "py-3.5"
-            } px-28 w-4/12`}
+            className="flex justify-center items-stretch hover:bg-[#eceded] bg-[#fefffe] w-full"
+            key={index}
           >
-            <img
-              src={item?.localMechanic ? tick_icon : cross_icon}
-              alt="Benifit"
-              className={item?.localMechanic ? "w-6 h-7" : "w-6 h-5"}
-            />
+            <div className="text-base sm:text-sm font-[700] text-[#282c30] border border-[#e6e8ed] py-2.5 px-3 w-[32%] flex items-center justify-center gap-2">
+              <img src={item?.imageUrl} alt="Benefit" className="w-5 h-5" />
+              {item?.benifit}
+            </div>
+            <div className="border border-[#e6e8ed] w-[18%] flex items-center justify-center py-2.5">
+              <img
+                src={item?.localMechanic ? tick_icon : cross_icon}
+                alt="Local Mechanic"
+                className={item?.localMechanic ? "w-5 h-5" : "w-4 h-4"}
+              />
+            </div>
+            <div className="border border-[#e6e8ed] w-[30%] flex items-center justify-center py-2.5">
+              <img
+                src={item?.authoriedServiceCenter ? tick_icon : cross_icon}
+                alt="Authorized Service Center"
+                className={item?.authoriedServiceCenter ? "w-5 h-5" : "w-4 h-4"}
+              />
+            </div>
+            <div className="border border-[#e6e8ed] w-[20%] flex items-center justify-center py-2.5">
+              {item?.vehicleCare && (
+                <img src={tick_icon_red} alt="Vehiclecare" className="w-5 h-5" />
+              )}
+            </div>
           </div>
-          <div
-            className={`text-base font-[700] text-[#282c30] flex items-center border-[1px] border-[#f1f3f2] ${
-              item?.authoriedServiceCenter ? "py-2.5" : "py-3.5"
-            } px-40 w-2/5`}
-          >
-            <img
-              src={item?.authoriedServiceCenter ? tick_icon : cross_icon}
-              alt="Benifit"
-              className={item?.authoriedServiceCenter ? "w-6 h-7" : "w-6 h-5"}
-            />
-          </div>
-          <div
-            className={`text-base font-[700] text-[#282c30] flex items-center border-[1px] border-[#f1f3f2] ${
-              item?.vehicleCare ? "py-2.5" : undefined
-            } px-28 w-1/4`}
-          >
-            <img
-              src={item?.vehicleCare ? tick_icon_red : undefined}
-              alt="Benifit"
-              className={item?.vehicleCare ? "w-6 h-7" : undefined}
-            />
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { customerReviewsData } from "../static/customerReviewsData";
 
 const CustomerReviews = () => {
   return (
-    <div className="hidden md:flex justify-center my-20 ml-5 font-montserrat space-x-48 bg-[#fefffe]">
+    <div className="hidden md:flex lg:flex justify-center my-20 ml-5 font-montserrat space-x-48 bg-[#fefffe]">
       <div className="w-1/2 flex justify-end items-center bg-[#f4f5f4] relative py-20">
         <img
           src={customer_reviews}

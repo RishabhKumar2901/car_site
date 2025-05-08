@@ -109,8 +109,12 @@ const BookCarServiceSlider: React.FC = () => {
   return (
     <div className="flex flex-col items-center relative">
       <div
-        className={`relative overflow-hidden bg-white w-[${ITEM_WIDTH}rem] h-[${ITEM_HEIGHT}rem] rounded-xl`}
-        style={{ boxShadow: "0 0 20px rgba(0, 0, 0, 0.1)" }}
+        className={`relative overflow-hidden bg-white rounded-xl shadow-lg`}
+        style={{
+          width: "100%",
+          maxWidth: `${ITEM_WIDTH}rem`,
+          height: `${ITEM_HEIGHT}rem`,
+        }}
       >
         <button
           onClick={manualPrev}
