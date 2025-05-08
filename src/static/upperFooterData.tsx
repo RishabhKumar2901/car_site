@@ -9,7 +9,7 @@ export const upperFooterData = [
       { to: "Media", link: "#" },
       { to: "Faq", link: "#" },
       { to: "Lubricants", link: "#" },
-      { to: "Review", link: "#" },
+      { to: "Review", link: "/reviews" },
       { to: "Terms & Condition", link: "/termsncondition" },
       { to: "Privacy Policy", link: "/privacypolicy" },
     ],
