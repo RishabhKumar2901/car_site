@@ -6,12 +6,16 @@ import { termsnConditionData } from "../static/termsConditionData";
 
 const TermsConditions = () => {
   const parseFormattedText = (text: string) => {
-    return text.split("\n").map((line: any, index: any) => {
-      const parts = [];
+    return text.split("\n").map((line: string, index: number) => {
+      if (line.trim() === "") {
+        return <div key={index} className="mb-8" />;
+      }
 
-      let regex = /(\*\*.*?\*\*|\^\^.*?\^\^)/g;
+      const parts = [];
+      const regex = /(\*\*.*?\*\*|\^\^.*?\^\^)/g;
       let lastIndex = 0;
       let match;
+      let hasHeading = false;
 
       while ((match = regex.exec(line)) !== null) {
         if (match.index > lastIndex) {
@@ -23,14 +27,21 @@ const TermsConditions = () => {
         const matchText = match[0];
 
         if (matchText.startsWith("^^")) {
+          hasHeading = true;
           parts.push(
-            <span key={match.index} className="text-[#ee363c] text-lg font-bold">
+            <span
+              key={match.index}
+              className="text-[#ee363c] text-lg font-bold"
+            >
               {matchText.slice(2, -2)}
             </span>
           );
         } else if (matchText.startsWith("**")) {
           parts.push(
-            <span key={match.index} className="text-base font-bold text-[#606061]">
+            <span
+              key={match.index}
+              className="text-base font-bold text-[#606061]"
+            >
               {matchText.slice(2, -2)}
             </span>
           );
@@ -44,7 +55,7 @@ const TermsConditions = () => {
       }
 
       return (
-        <div key={index} className="mb-2">
+        <div key={index} className={`mb-2 ${hasHeading ? "mt-8" : ""}`}>
           {parts}
         </div>
       );
@@ -54,13 +65,13 @@ const TermsConditions = () => {
   return (
     <div className="bg-[#fefffe] font-montserrat">
       <Navbar />
-      <div className="text-4xl font-semibold pt-28 text-center">
+      <div className="text-4xl font-semibold pt-32 text-center">
         Terms & Condition
       </div>
       <div className="w-full flex justify-center">
-      <div className="mt-4 text-base text-[#8e8f8e] w-8/12">
-        {parseFormattedText(termsnConditionData)}
-      </div>
+        <div className="text-base font-light text-[#565757] w-[90%] xl:w-[69%] leading-[1.7rem] tracking-wide">
+          {parseFormattedText(termsnConditionData)}
+        </div>
       </div>
       <a
         href="https://apps.apple.com/in/app/vehiclecare/id1634342039?mt=8"
