@@ -3,7 +3,7 @@ import BookCarServiceSlider from "./BookCarServiceSlider";
 const BookCarService = () => {
   return (
     <div className="pt-32 font-montserrat flex flex-col items-center justify-center lg:flex-row lg:justify-center">
-      <div className="flex flex-col items-center text-center lg:items-start lg:text-left order-2 lg:order-1 pl-10">
+      <div className="flex flex-col items-center text-center lg:items-start lg:text-left order-2 lg:order-1 lg:pl-10">
         <div className="text-[2rem] font-bold">
           Book the Best{" "}
           <span className="text-[#ed1c24]">
