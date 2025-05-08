@@ -11,7 +11,7 @@ export const upperFooterData = [
       { to: "Lubricants", link: "#" },
       { to: "Review", link: "#" },
       { to: "Terms & Condition", link: "/termsncondition" },
-      { to: "Privacy Policy", link: "#" },
+      { to: "Privacy Policy", link: "/privacypolicy" },
     ],
   },
   {

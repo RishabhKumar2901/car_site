@@ -2,19 +2,22 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import UpperFooter from "../components/UpperFooter";
 import app_banner from "../assets/app_banner.png";
-import { termsnConditionData } from "../static/termsConditionData";
 import { parseFormattedText } from "../utils/parseFormattedText";
+import { privacyPolicyData } from "../static/privacyPolicyData";
 
-const TermsConditions = () => {
+const PrivacyPolicy = () => {
   return (
     <div className="bg-[#fefffe] font-montserrat">
       <Navbar />
-      <div className="text-4xl font-semibold pt-32 text-center">
-        Terms & Condition
-      </div>
-      <div className="w-full flex justify-center">
+      <div className="w-full flex flex-col items-center pt-20">
         <div className="text-base font-light text-[#565757] w-[90%] xl:w-[69%] leading-[1.7rem] tracking-wide">
-          {parseFormattedText(termsnConditionData)}
+          {parseFormattedText(privacyPolicyData[0])}
+        </div>
+        <div className="text-4xl font-semibold text-[#ec1c25] w-[90%] xl:w-[69%]">
+          Privacy Policy
+        </div>
+        <div className="text-base font-light text-[#565757] w-[90%] xl:w-[69%] leading-[1.7rem] tracking-wide">
+          {parseFormattedText(privacyPolicyData[1])}
         </div>
       </div>
       <a
@@ -29,4 +32,4 @@ const TermsConditions = () => {
   );
 };
 
-export default TermsConditions;
+export default PrivacyPolicy;
