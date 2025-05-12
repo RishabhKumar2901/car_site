@@ -5,7 +5,7 @@ export const upperFooterData = [
       { to: "About", link: "#" },
       { to: "Contact us", link: "#" },
       { to: "Blog", link: "#" },
-      { to: "Career", link: "#" },
+      { to: "Career", link: "/career" },
       { to: "Media", link: "/media" },
       { to: "Faq", link: "/faq" },
       { to: "Lubricants", link: "#" },

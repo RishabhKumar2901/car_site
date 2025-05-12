@@ -12,7 +12,7 @@ const RecentNews = () => {
           Recent News
         </div>
 
-        <div className="flex flex-wrap gap-x-14 gap-y-20 justify-center">
+        <div className="flex flex-wrap gap-x-14 gap-y-20 justify-start">
           {recentNewsData?.map((item, index) => (
             <div
               className="flex flex-col py-3 px-8 mt-6 w-[90%] sm:w-[70%] md:w-[47%] lg:w-[30%] cursor-pointer bg-[#fefeff] relative h-fit"

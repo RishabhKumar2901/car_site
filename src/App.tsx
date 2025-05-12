@@ -5,6 +5,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Reviews from "./pages/Reviews";
 import Faq from "./pages/Faq";
 import Media from "./pages/Media";
+import Career from "./pages/Career";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/media" element={<Media />} />
+        <Route path="/career" element={<Career />} />
       </Routes>
     </Router>
   );
