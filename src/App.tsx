@@ -3,7 +3,8 @@ import Home from "./pages/Home";
 import TermsConditions from "./pages/TermsConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Reviews from "./pages/Reviews";
-import Faq from "./pages/faq";
+import Faq from "./pages/Faq";
+import Media from "./pages/Media";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
         <Route path="/faq" element={<Faq />} />
+        <Route path="/media" element={<Media />} />
       </Routes>
     </Router>
   );
