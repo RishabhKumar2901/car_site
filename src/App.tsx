@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import TermsConditions from "./pages/TermsConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Reviews from "./pages/Reviews";
+import Faq from "./pages/faq";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/termsncondition" element={<TermsConditions />} />
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+        <Route path="/faq" element={<Faq />} />
       </Routes>
     </Router>
   );
