@@ -4,7 +4,7 @@ import minus_icon from "../assets/minus_icon.svg";
 import { frequentlyAskedQuestionsData } from "../static/frequentlyAskedQuestionsData";
 
 const FrequentlyAskedQuestions = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(0);
 
   const toggleFAQ = (index: any) => {
     setOpenIndex(openIndex === index ? null : index);

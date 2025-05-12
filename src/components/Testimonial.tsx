@@ -20,8 +20,8 @@ const Testimonial = () => {
   };
 
   return (
-    <>
-      <div className="text-4xl font-semibold pt-32 text-center">
+    <div className="pt-32 pb-24">
+      <div className="text-4xl font-semibold text-center">
         Testimonial
       </div>
 
@@ -71,7 +71,7 @@ const Testimonial = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
