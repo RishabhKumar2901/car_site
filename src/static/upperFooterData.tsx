@@ -3,7 +3,7 @@ export const upperFooterData = [
     title: "Company",
     page: [
       { to: "About", link: "#" },
-      { to: "Contact us", link: "#" },
+      { to: "Contact us", link: "/contactus" },
       { to: "Blog", link: "#" },
       { to: "Career", link: "/career" },
       { to: "Media", link: "/media" },

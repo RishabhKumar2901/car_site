@@ -6,6 +6,7 @@ import Reviews from "./pages/Reviews";
 import Faq from "./pages/Faq";
 import Media from "./pages/Media";
 import Career from "./pages/Career";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/media" element={<Media />} />
         <Route path="/career" element={<Career />} />
+        <Route path="/contactus" element={<ContactUs />} />
       </Routes>
     </Router>
   );

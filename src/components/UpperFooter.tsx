@@ -8,7 +8,7 @@ const UpperFooter = () => {
     <div className="bg-[#393839] font-montserrat text-base font-light">
       <div className="py-12 px-8 md:px-0 flex justify-center md:space-x-4 flex-wrap">
         {upperFooterData?.map((data, index) => (
-          <div className="w-full md:w-1/6">
+          <div className="w-full md:w-1/6" key={index}>
             <div
               className="text-white mt-4 flex items-center text-xl font-semibold mb-4"
               key={index}
