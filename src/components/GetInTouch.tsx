@@ -2,7 +2,7 @@ import job_img from "../assets/job_img.jpg";
 
 const GetInTouch = () => {
   return (
-    <div className="pt-32 px-4 flex justify-center font-montserrat flex-wrap gap-10">
+    <div className="pt-32 pb-14 px-4 flex justify-center font-montserrat flex-wrap gap-10">
       <div className="w-full sm:w-[80%] md:w-[45%] lg:w-1/3 flex flex-col">
         <div className="text-[#ed1c24] font-roboto text-lg font-bold">
           //&nbsp;&nbsp;&nbsp;&nbsp;Career&nbsp;&nbsp;&nbsp;&nbsp;//
