@@ -7,6 +7,7 @@ import Faq from "./pages/Faq";
 import Media from "./pages/Media";
 import Career from "./pages/Career";
 import ContactUs from "./pages/ContactUs";
+import AboutUs from "./pages/AboutUs";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/media" element={<Media />} />
         <Route path="/career" element={<Career />} />
         <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/aboutus" element={<AboutUs />} />
       </Routes>
     </Router>
   );
