@@ -1,7 +1,7 @@
-export const parseFormattedText = (text: string) => {
+export const parseFormattedText = (text: string, mb?: string | "mb-8") => {
     return text.split("\n").map((line: string, index: number) => {
       if (line.trim() === "") {
-        return <div key={index} className="mb-8" />;
+        return <div key={index} className={mb} />;
       }
 
       const parts = [];

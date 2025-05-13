@@ -8,7 +8,7 @@ export const upperFooterData = [
       { to: "Career", link: "/career" },
       { to: "Media", link: "/media" },
       { to: "Faq", link: "/faq" },
-      { to: "Lubricants", link: "#" },
+      { to: "Lubricants", link: "/lubricants" },
       { to: "Review", link: "/reviews" },
       { to: "Terms & Condition", link: "/termsncondition" },
       { to: "Privacy Policy", link: "/privacypolicy" },
