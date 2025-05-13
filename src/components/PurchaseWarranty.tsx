@@ -1,9 +1,9 @@
 import ImageSlider from "./ImageSlider";
 import { imageSliderData } from "../static/imageSliderData";
 import { useState } from "react";
-import { amcData } from "../static/amcData";
+import { warrantyData } from "../static/warrantyData";
 
-const PurchaseAMC = () => {
+const PurchaseWarranty = () => {
   const [formData, setFormData] = useState<any>({
     name: "",
     email: "",
@@ -11,8 +11,12 @@ const PurchaseAMC = () => {
     year: "",
     mobile: "",
     registration: "",
-    vehicle: amcData?.vehicleTypes?.[0]?.label || "",
-    price: amcData?.vehicleTypes?.[0]?.price || 0,
+    package: warrantyData?.package?.[0]?.label,
+    duration: warrantyData?.durationTypes[0]?.label,
+    price:
+      warrantyData?.comboPrices[
+        `${warrantyData?.durationTypes[0]?.label}|${warrantyData?.package?.[0]?.label}` as keyof typeof warrantyData.comboPrices
+      ],
   });
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -24,12 +28,17 @@ const PurchaseAMC = () => {
     setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
-  const handleVehicleSelect = (label: string, price: number) => {
-    setFormData((prev: any) => ({
-      ...prev,
-      vehicle: label,
-      price: price,
-    }));
+  const handleComboSelect = (key: string, value: string) => {
+    const updatedForm = {
+      ...formData,
+      [key]: value,
+    };
+    const comboKey = `${updatedForm?.duration}|${updatedForm?.package}`;
+    const newPrice =
+      warrantyData.comboPrices[
+        comboKey as keyof typeof warrantyData.comboPrices
+      ] ?? 0;
+    setFormData({ ...updatedForm, price: newPrice });
   };
 
   const validateForm = () => {
@@ -65,13 +74,14 @@ const PurchaseAMC = () => {
   };
 
   return (
-    <div className="pt-32 font-montserrat flex flex-col items-center justify-center lg:flex-row lg:justify-center">
-      <div className="flex flex-col items-center lg:items-start lg:text-left order-2 lg:order-1 lg:pl-10">
+    <div className="pt-32 font-montserrat flex flex-col items-center justify-center xl:flex-row xl:justify-center">
+      <div className="flex flex-col items-center xl:items-start xl:text-left order-2 xl:order-1 xl:pl-10">
         <div className="text-[2rem] font-extrabold">
-          Purchase <span className="text-[#ed1c24]">AMC</span>
+          Extend or purchase your <br />
+          <span className="text-[#ed1c24]">Car Warranty</span>
         </div>
 
-        <div className="flex flex-col lg:flex-row lg:space-x-2 w-full max-w-xs lg:max-w-md">
+        <div className="flex flex-col xl:flex-row xl:space-x-2 w-full max-w-xs xl:max-w-md">
           <div className="w-full">
             <input
               className="border-[1px] rounded-full py-5 px-6 mt-4 shadow-md border-gray-300 placeholder:text-sm placeholder:font-medium w-full"
@@ -102,7 +112,7 @@ const PurchaseAMC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row lg:space-x-2 w-full max-w-xs lg:max-w-md">
+        <div className="flex flex-col xl:flex-row xl:space-x-2 w-full max-w-xs xl:max-w-md">
           <div className="w-full">
             <input
               className="border-[1px] rounded-full py-5 px-6 mt-4 shadow-md border-gray-300 placeholder:text-sm placeholder:font-medium w-full"
@@ -112,9 +122,7 @@ const PurchaseAMC = () => {
               onChange={handleChange}
             />
             {errors.car && (
-              <div className="text-red-500 text-xs ml-5 mt-1">
-                {errors.car}
-              </div>
+              <div className="text-red-500 text-xs ml-5 mt-1">{errors.car}</div>
             )}
           </div>
           <div className="w-full">
@@ -133,7 +141,7 @@ const PurchaseAMC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row lg:space-x-2 w-full max-w-xs lg:max-w-md">
+        <div className="flex flex-col xl:flex-row xl:space-x-2 w-full max-w-xs xl:max-w-md">
           <div className="w-full">
             <input
               className="border-[1px] rounded-full py-5 px-6 mt-4 shadow-md border-gray-300 placeholder:text-sm placeholder:font-medium w-full"
@@ -164,28 +172,64 @@ const PurchaseAMC = () => {
           </div>
         </div>
 
-        <div className="text-[0.9rem] font-bold text-[#555] mt-8">
-          Select Vehicle Type
-        </div>
-        <div className="mt-4 mr-5 w-full flex flex-wrap gap-y-4">
-          {amcData?.vehicleTypes?.map((option) => (
-            <div
-              key={option?.label}
-              className="flex items-center cursor-pointer mr-4"
-            >
-              <input
-                type="radio"
-                id={option?.label}
-                name="vehicleType"
-                className="w-4 h-4 text-[#ed1d25] bg-gray-100 border-gray-300"
-                onChange={() => handleVehicleSelect(option.label, option.price)}
-                checked={formData.vehicle === option.label}
-              />
-              <label htmlFor={option?.label} className="ms-2 text-lg font-bold">
-                {option?.label}
-              </label>
+        <div className="flex justify-between w-full">
+          <div className="flex flex-col">
+            <div className="text-[0.9rem] font-bold text-[#555] mt-8">
+              Select Duration
             </div>
-          ))}
+            <div className="mt-4 mr-5 w-full flex flex-col gap-y-4">
+              {warrantyData.durationTypes.map((option) => (
+                <div
+                  key={option.label}
+                  className="flex items-center cursor-pointer mr-4"
+                >
+                  <input
+                    type="radio"
+                    id={option.label}
+                    name="duration"
+                    className="w-4 h-4"
+                    onChange={() => handleComboSelect("duration", option.label)}
+                    checked={formData.duration === option.label}
+                  />
+                  <label
+                    htmlFor={option.label}
+                    className="ms-2 text-lg font-bold"
+                  >
+                    {option.label}
+                  </label>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-col">
+            <div className="text-[0.9rem] font-bold text-[#555] mt-8">
+              Select Package
+            </div>
+            <div className="mt-4 mr-5 w-full flex flex-col gap-y-4">
+              {warrantyData.package.map((option) => (
+                <div
+                  key={option.label}
+                  className="flex items-center cursor-pointer mr-4"
+                >
+                  <input
+                    type="radio"
+                    id={option.label}
+                    name="vehicleType"
+                    className="w-4 h-4"
+                    onChange={() => handleComboSelect("package", option.label)}
+                    checked={formData.package === option.label}
+                  />
+                  <label
+                    htmlFor={option.label}
+                    className="ms-2 text-lg font-bold"
+                  >
+                    {option.label}
+                  </label>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         <button
@@ -198,7 +242,7 @@ const PurchaseAMC = () => {
 
       <div className="mt-2 xl:mt-0 w-full lg:max-w-3xl xl:max-w-4xl order-1 lg:order-2 mb-10 lg:mb-0 px-2">
         <ImageSlider
-          imageData={imageSliderData?.amcData}
+          imageData={imageSliderData?.warrantyData}
           imgHeight="full"
           navigation="false"
         />
@@ -207,4 +251,4 @@ const PurchaseAMC = () => {
   );
 };
 
-export default PurchaseAMC;
+export default PurchaseWarranty;

@@ -4,6 +4,8 @@ import slider_img3 from "../assets/slider_img3.jpg";
 import slider_img4 from "../assets/slider_img4.jpg";
 import amc_img1 from "../assets/amc_img1.jpg";
 import amc_img2 from "../assets/amc_img2.jpg";
+import warranty_img1 from "../assets/warranty_img1.jpg";
+import warranty_img2 from "../assets/warranty_img2.jpg";
 
 export const imageSliderData = {
   bookCarServiceData: [
@@ -15,5 +17,9 @@ export const imageSliderData = {
   amcData: [
     { name: "Slider1", src: amc_img1 },
     { name: "Slider2", src: amc_img2 },
+  ],
+  warrantyData: [
+    { name: "Slider1", src: warranty_img1 },
+    { name: "Slider2", src: warranty_img2 },
   ]
 };

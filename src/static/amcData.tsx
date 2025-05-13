@@ -6,6 +6,8 @@ export const amcData = {
     { label: "Luxury", price: 21999 },
   ],
   annualMaintainanceContractData: {
+    title: "AMC",
+    heading: "Annual Maintenance Contract",
     section1:
       "VehicleCare Annual Maintenance Contracts are carefully designed to cater to the unique needs of every driver. Our AMC plans offer tailored and budget-friendly options to keep your vehicle in optimal condition throughout the year. Whether you are a low-mileage commuter, a high-mileage traveller or a used car owner, we offer you the flexibility to choose the services as per your special needs. VehicleCare AMC ensures comprehensive and convenient maintenance, helping you manage your vehicle repair and maintenance costs and avoid unexpected expenses. VehicleCare believes in empowering you, so you drive confidently, knowing that your vehicle's care is in expert hands.",
     section2: `@@Savings up to 50% with@@ ~~Vehiclecare AMC~~ @@plan@@

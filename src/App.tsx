@@ -10,6 +10,7 @@ import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs";
 import Lubricants from "./pages/Lubricants";
 import AMC from "./pages/AMC";
+import Warranty from "./pages/Warranty";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/lubricants" element={<Lubricants />} />
         <Route path="/amc" element={<AMC />} />
+        <Route path="/warranty" element={<Warranty />} />
       </Routes>
     </Router>
   );

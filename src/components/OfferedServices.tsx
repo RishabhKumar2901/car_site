@@ -21,7 +21,7 @@ const OfferedServices = () => {
       <div className="flex xl:w-3/4 lg:1/2 flex-wrap justify-center items-center">
         {offeredServicesData?.map((item, index) => (
           <div
-            className="flex flex-col bg-[#e8e8e8] rounded-lg px-6 lg:px-0 py-3 border-2 border-[#d6d7d6] mx-2 my-3 items-center justify-center lg:w-[13.5%] flex-wrap"
+            className="flex flex-col bg-[#e8e8e8] rounded-lg px-6 lg:px-0 py-3 border-2 border-[#d6d7d6] mx-2 my-3 items-center justify-center lg:w-[13.5%] flex-wrap hover:scale-110 cursor-pointer transition ease-in"
             key={index}
             onClick={() => navigate(item?.directedUrl)}
           >
