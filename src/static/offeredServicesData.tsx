@@ -17,7 +17,7 @@ export const offeredServicesData = [
   { imageUrl: service5, serviceName: "Dent Paint", directedUrl: "#" },
   { imageUrl: service6, serviceName: "Custom Repair", directedUrl: "#" },
   { imageUrl: service7, serviceName: "Insurance Claim", directedUrl: "#" },
-  { imageUrl: service8, serviceName: "AMC", directedUrl: "#" },
+  { imageUrl: service8, serviceName: "AMC", directedUrl: "/amc" },
   { imageUrl: service9, serviceName: "Warranty", directedUrl: "#" },
   { imageUrl: service10, serviceName: "EV", directedUrl: "#" },
 ];

@@ -9,6 +9,7 @@ import Career from "./pages/Career";
 import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs";
 import Lubricants from "./pages/Lubricants";
+import AMC from "./pages/AMC";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/lubricants" element={<Lubricants />} />
+        <Route path="/amc" element={<AMC />} />
       </Routes>
     </Router>
   );

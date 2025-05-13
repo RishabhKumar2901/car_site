@@ -1,4 +1,5 @@
-import BookCarServiceSlider from "./BookCarServiceSlider";
+import ImageSlider from "./ImageSlider";
+import { imageSliderData } from "../static/imageSliderData";
 
 const BookCarService = () => {
   return (
@@ -34,8 +35,8 @@ const BookCarService = () => {
         </button>
       </div>
 
-      <div className="mt-2 xl:mt-0 w-full lg:max-w-3xl xl:max-w-4xl order-1 lg:order-2 mb-10 lg:mb-0">
-        <BookCarServiceSlider />
+      <div className="mt-2 xl:mt-0 w-full lg:max-w-3xl xl:max-w-4xl order-1 lg:order-2 mb-10 lg:mb-0 px-2">
+        <ImageSlider imageData={imageSliderData?.bookCarServiceData} />
       </div>
     </div>
   );

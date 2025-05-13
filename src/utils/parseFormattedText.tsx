@@ -1,56 +1,86 @@
-export const parseFormattedText = (text: string, mb?: string | "mb-8") => {
-    return text.split("\n").map((line: string, index: number) => {
-      if (line.trim() === "") {
-        return <div key={index} className={mb} />;
+// ^^ => red bold text
+// ** => bold text
+// ~~ => red bold heading
+// @@ => bold heading
+// $$ => red text
+
+export const parseFormattedText = (text: string, mb?: string) => {
+  return text.split("\n").map((line: string, index: number) => {
+    if (line.trim() === "") {
+      return <div key={index} className={mb ? mb : "mb-8"} />;
+    }
+
+    const parts = [];
+    const regex = /(\*\*.*?\*\*|\^\^.*?\^\^|~~.*?~~|@@.*?@@|\$\$.*?\$\$)/g;
+    let lastIndex = 0;
+    let match;
+    let hasHeading = false;
+
+    while ((match = regex.exec(line)) !== null) {
+      if (match.index > lastIndex) {
+        parts.push(
+          <span key={lastIndex}>{line.slice(lastIndex, match.index)}</span>
+        );
       }
 
-      const parts = [];
-      const regex = /(\*\*.*?\*\*|\^\^.*?\^\^)/g;
-      let lastIndex = 0;
-      let match;
-      let hasHeading = false;
+      const matchText = match[0];
 
-      while ((match = regex.exec(line)) !== null) {
-        if (match.index > lastIndex) {
-          parts.push(
-            <span key={lastIndex}>{line.slice(lastIndex, match.index)}</span>
-          );
-        }
-
-        const matchText = match[0];
-
-        if (matchText.startsWith("^^")) {
-          hasHeading = true;
-          parts.push(
-            <span
-              key={match.index}
-              className="text-[#ee363c] text-lg font-bold"
-            >
-              {matchText.slice(2, -2)}
-            </span>
-          );
-        } else if (matchText.startsWith("**")) {
-          parts.push(
-            <span
-              key={match.index}
-              className="text-base font-bold text-[#606061]"
-            >
-              {matchText.slice(2, -2)}
-            </span>
-          );
-        }
-
-        lastIndex = match.index + matchText.length;
+      if (matchText.startsWith("^^")) {
+        hasHeading = true;
+        parts.push(
+          <span key={match.index} className="text-[#ee363c] text-base lg:text-lg font-bold">
+            {matchText.slice(2, -2)}
+          </span>
+        );
+      } else if (matchText.startsWith("**")) {
+        parts.push(
+          <span
+            key={match.index}
+            className="text-sm lg:text-base font-bold text-[#606061]"
+          >
+            {matchText.slice(2, -2)}
+          </span>
+        );
+      } else if (matchText.startsWith("~~")) {
+        parts.push(
+          <span
+            key={match.index}
+            className="text-xl lg:text-2xl font-bold text-[#ee363c]"
+          >
+            {matchText.slice(2, -2)}
+          </span>
+        );
+      } else if (matchText.startsWith("@@")) {
+        parts.push(
+          <span
+            key={match.index}
+            className="text-xl lg:text-2xl font-bold text-[#202429]"
+          >
+            {matchText.slice(2, -2)}
+          </span>
+        );
+      } else if (matchText.startsWith("$$")) {
+        parts.push(
+          <span
+            key={match.index}
+            className="text-sm lg:text-base text-[#ee363c]"
+          >
+            {matchText.slice(2, -2)}
+          </span>
+        );
       }
 
-      if (lastIndex < line.length) {
-        parts.push(<span key={lastIndex}>{line.slice(lastIndex)}</span>);
-      }
+      lastIndex = match.index + matchText.length;
+    }
 
-      return (
-        <div key={index} className={`mb-2 ${hasHeading ? "mt-8" : ""}`}>
-          {parts}
-        </div>
-      );
-    });
-  };
+    if (lastIndex < line.length) {
+      parts.push(<span key={lastIndex}>{line.slice(lastIndex)}</span>);
+    }
+
+    return (
+      <div key={index} className={`mb-2 ${hasHeading ? "mt-8" : ""}`}>
+        {parts}
+      </div>
+    );
+  });
+};

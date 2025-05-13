@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import { offeredServicesData } from "../static/offeredServicesData";
 
 const OfferedServices = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col justify-center items-center font-montserrat text-center mt-10">
       <div className="font-semibold text-2xl lg:text-4xl text-[#222222]">
@@ -17,10 +20,10 @@ const OfferedServices = () => {
       </div>
       <div className="flex xl:w-3/4 lg:1/2 flex-wrap justify-center items-center">
         {offeredServicesData?.map((item, index) => (
-          <a
+          <div
             className="flex flex-col bg-[#e8e8e8] rounded-lg px-6 lg:px-0 py-3 border-2 border-[#d6d7d6] mx-2 my-3 items-center justify-center lg:w-[13.5%] flex-wrap"
             key={index}
-            href={item?.directedUrl}
+            onClick={() => navigate(item?.directedUrl)}
           >
             <div className="w-28 h-28 overflow-hidden">
               <img
@@ -32,7 +35,7 @@ const OfferedServices = () => {
             <div className="text-[#212428] font-semibold mt-3">
               {item?.serviceName}
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </div>

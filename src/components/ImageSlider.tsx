@@ -1,13 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 import left_arrow from "../assets/left_arrow.svg";
 import right_arrow from "../assets/right_arrow.svg";
-import { bookCarServiceSliderData } from "../static/bookCarServiceSliderData";
 
 const ITEM_WIDTH = 43.563;
 const ITEM_HEIGHT = 22.813;
 
-const BookCarServiceSlider: React.FC = () => {
-  const [logos, setLogos] = useState(bookCarServiceSliderData);
+interface ImageSliderProps {
+  imageData: any[];
+  imgHeight?: string;
+  navigation?: string;
+}
+
+const ImageSlider: React.FC<ImageSliderProps> = ({
+  imageData,
+  imgHeight,
+  navigation,
+}) => {
+  const [logos, setLogos] = useState(imageData);
   const [isAnimating, setIsAnimating] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -30,12 +39,12 @@ const BookCarServiceSlider: React.FC = () => {
 
     setTimeout(() => {
       setIsAnimating(false);
-      setLogos((prev) => {
+      setLogos((prev: any) => {
         const first = prev[0];
         const rest = prev.slice(1);
         return [...rest, first];
       });
-      setCurrentIndex((prev) => (prev + 1) % bookCarServiceSliderData.length);
+      setCurrentIndex((prev) => (prev + 1) % imageData?.length);
 
       if (trackRef.current) {
         trackRef.current.style.transition = "none";
@@ -69,13 +78,13 @@ const BookCarServiceSlider: React.FC = () => {
     clearAutoScroll();
     setIsAnimating(true);
 
-    setLogos((prev) => {
+    setLogos((prev: any) => {
       const last = prev[prev.length - 1];
       const rest = prev.slice(0, -1);
       return [last, ...rest];
     });
-    setCurrentIndex((prev) =>
-      (prev - 1 + bookCarServiceSliderData.length) % bookCarServiceSliderData.length
+    setCurrentIndex(
+      (prev) => (prev - 1 + imageData?.length) % imageData?.length
     );
 
     if (trackRef.current) {
@@ -96,7 +105,8 @@ const BookCarServiceSlider: React.FC = () => {
   const handleDotClick = (targetIdx: number) => {
     hasUserInteracted.current = true;
     clearAutoScroll();
-    const shift = (targetIdx - currentIndex + bookCarServiceSliderData.length) % bookCarServiceSliderData.length;
+    const shift =
+      (targetIdx - currentIndex + imageData?.length) % imageData?.length;
     let updated = [...logos];
     for (let i = 0; i < shift; i++) {
       const first = updated.shift();
@@ -113,15 +123,19 @@ const BookCarServiceSlider: React.FC = () => {
         style={{
           width: "100%",
           maxWidth: `${ITEM_WIDTH}rem`,
-          height: `${ITEM_HEIGHT}rem`,
+          height: imgHeight ? undefined : `${ITEM_HEIGHT}rem`,
         }}
       >
-        <button
-          onClick={manualPrev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 bg-[#dbdbdb] shadow rounded-full"
-        >
-          <img src={left_arrow} alt="Left" className="w-4 h-4" />
-        </button>
+        {navigation ? (
+          <></>
+        ) : (
+          <button
+            onClick={manualPrev}
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 bg-[#dbdbdb] shadow rounded-full"
+          >
+            <img src={left_arrow} alt="Left" className="w-4 h-4" />
+          </button>
+        )}
 
         <div className="overflow-hidden w-full h-full">
           <div
@@ -129,49 +143,57 @@ const BookCarServiceSlider: React.FC = () => {
             ref={trackRef}
             style={{ width: `${ITEM_WIDTH}rem` }}
           >
-            {logos?.map((logo, idx) => (
+            {logos?.map((logo: any, idx: any) => (
               <div
                 key={`${logo?.name}-${idx}`}
                 className="flex items-center justify-center"
                 style={{
                   width: `${ITEM_WIDTH}rem`,
-                  height: `${ITEM_HEIGHT}rem`,
+                  height: imgHeight ? undefined : `${ITEM_HEIGHT}rem`,
                   flexShrink: 0,
                 }}
               >
                 <img
                   src={logo?.src}
                   alt={logo?.name}
-                  className="object-contain w-full h-full"
+                  className={`object-contain w-[${ITEM_WIDTH}rem] h-[${ITEM_HEIGHT}rem]`}
                 />
               </div>
             ))}
           </div>
         </div>
 
-        <button
-          onClick={manualNext}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-2 bg-[#dbdbdb] shadow rounded-full"
-        >
-          <img src={right_arrow} alt="Right" className="w-4 h-4" />
-        </button>
+        {navigation ? (
+          <></>
+        ) : (
+          <button
+            onClick={manualNext}
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-2 bg-[#dbdbdb] shadow rounded-full"
+          >
+            <img src={right_arrow} alt="Right" className="w-4 h-4" />
+          </button>
+        )}
       </div>
 
-      <div className="flex justify-center mt-4 space-x-2 absolute bottom-5">
-        {bookCarServiceSliderData.map((_, idx) => (
-          <span
-            key={idx}
-            className={`w-2 h-2 rounded-full cursor-pointer transition-all duration-300 ${
-              currentIndex % bookCarServiceSliderData.length === idx
-                ? "scale-150 bg-gray-400"
-                : "bg-gray-400"
-            }`}
-            onClick={() => handleDotClick(idx)}
-          />
-        ))}
-      </div>
+      {navigation ? (
+        <></>
+      ) : (
+        <div className="flex justify-center mt-4 space-x-2 absolute bottom-5">
+          {imageData?.map((_: any, idx: any) => (
+            <span
+              key={idx}
+              className={`w-2 h-2 rounded-full cursor-pointer transition-all duration-300 ${
+                currentIndex % imageData?.length === idx
+                  ? "scale-150 bg-gray-400"
+                  : "bg-gray-400"
+              }`}
+              onClick={() => handleDotClick(idx)}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
 
-export default BookCarServiceSlider;
+export default ImageSlider;
