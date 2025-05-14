@@ -69,9 +69,9 @@ const Navbar: React.FC = () => {
           <a className="cursor-pointer hover:text-[#ec262e]" href="#">
             Blog
           </a>
-          <a className="cursor-pointer hover:text-[#ec262e]" href="#">
+          <div className="cursor-pointer hover:text-[#ec262e]" onClick={() => navigate("/ai-labs")}>
             VehicleAI Labs
-          </a>
+          </div>
           <button className="bg-[#ed1d25] text-white p-3 rounded-md">
             Login
           </button>
