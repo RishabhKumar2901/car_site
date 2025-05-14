@@ -21,7 +21,7 @@ const LubricantsComponent = () => {
           {lubricantsData?.heading}
         </div>
 
-        <div className="text-[#868687] mt-4 w-full">
+        <div className="mt-4 w-full">
           {parseFormattedText(lubricantsData?.text, "mb-6")}
         </div>
 

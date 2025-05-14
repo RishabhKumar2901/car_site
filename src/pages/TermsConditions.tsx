@@ -13,7 +13,7 @@ const TermsConditions = () => {
         Terms & Condition
       </div>
       <div className="w-full flex justify-center">
-        <div className="text-base font-light text-[#565757] w-[90%] xl:w-[69%] leading-[1.7rem] tracking-wide">
+        <div className="w-[90%] xl:w-[69%]">
           {parseFormattedText(termsnConditionData)}
         </div>
       </div>

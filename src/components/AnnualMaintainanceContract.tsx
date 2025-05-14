@@ -11,15 +11,15 @@ const AnnualMaintainanceContract = () => {
         <div className="text-2xl lg:text-4xl font-semibold mt-4 font-montserrat mb-10">
           {amcData?.annualMaintainanceContractData?.heading}
         </div>
-        <div className="text-sm lg:text-base text-[#737373] leading-[1.8rem]">
+        <div>
           {parseFormattedText(amcData?.annualMaintainanceContractData?.section1)}
         </div>
         <div className="border-t-[1px] border-[#e9e9e9] w-full my-6"></div>
-        <div className="text-sm lg:text-base text-[#737373] leading-[1.8rem]">
+        <div>
           {parseFormattedText(amcData?.annualMaintainanceContractData?.section2)}
         </div>
         <div className="border-t-[1px] border-[#e9e9e9] w-full my-6"></div>
-        <div className="text-sm lg:text-base text-[#737373] leading-[1.8rem]">
+        <div>
           {parseFormattedText(amcData?.annualMaintainanceContractData?.section3)}
         </div>
       </div>

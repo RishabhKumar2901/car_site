@@ -1,8 +1,10 @@
 // ^^ => red bold text
-// ** => bold text
-// ~~ => red bold heading
-// @@ => bold heading
-// $$ => red text
+// ** => black bold text
+// $$ => red normal text
+// ~~ => red bold sub-heading
+// @@ => black bold sub-heading
+// ## => red bold heading
+// %% => black bold heading
 
 export const parseFormattedText = (text: string, mb?: string) => {
   return text.split("\n").map((line: string, index: number) => {
@@ -11,7 +13,7 @@ export const parseFormattedText = (text: string, mb?: string) => {
     }
 
     const parts = [];
-    const regex = /(\*\*.*?\*\*|\^\^.*?\^\^|~~.*?~~|@@.*?@@|\$\$.*?\$\$)/g;
+    const regex = /(##.*?##|%%.*?%%|~~.*?~~|@@.*?@@|\^\^.*?\^\^|\*\*.*?\*\*|\$\$.*?\$\$)/g;
     let lastIndex = 0;
     let match;
     let hasHeading = false;
@@ -68,6 +70,25 @@ export const parseFormattedText = (text: string, mb?: string) => {
             {matchText.slice(2, -2)}
           </span>
         );
+      }else if (matchText.startsWith("##")) {
+        parts.push(
+          <span
+            key={match.index}
+            className="text-2xl lg:text-4xl text-[#ee363c] font-semibold"
+          >
+            {matchText.slice(2, -2)}
+          </span>
+        );
+      }
+      else if (matchText.startsWith("%%")) {
+        parts.push(
+          <span
+            key={match.index}
+            className="text-2xl lg:text-4xl text-[#202429] font-semibold"
+          >
+            {matchText.slice(2, -2)}
+          </span>
+        );
       }
 
       lastIndex = match.index + matchText.length;
@@ -78,7 +99,7 @@ export const parseFormattedText = (text: string, mb?: string) => {
     }
 
     return (
-      <div key={index} className={`mb-2 ${hasHeading ? "mt-8" : ""}`}>
+      <div key={index} className={`mb-2 ${hasHeading && "mb-0"} leading-[1.8rem] tracking-wide text-[#555] font-light text-sm lg:text-base`}>
         {parts}
       </div>
     );

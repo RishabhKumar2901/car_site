@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import full_logo from "../assets/full_logo.png";
 import { navbarData } from "../static/navbarData";
+import { useNavigate } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -33,9 +35,9 @@ const Navbar: React.FC = () => {
           <a className="cursor-pointer hover:text-[#ec262e]" href="#">
             Car Service
           </a>
-          <a className="cursor-pointer hover:text-[#ec262e]" href="#">
+          <div className="cursor-pointer hover:text-[#ec262e]" onClick={() => navigate("/insurance-claim")}>
             Insurance Claim
-          </a>
+          </div>
           <div className="relative" ref={dropdownRef}>
             <div
               className="cursor-pointer flex justify-center items-center group"

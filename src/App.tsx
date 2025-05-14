@@ -11,6 +11,7 @@ import AboutUs from "./pages/AboutUs";
 import Lubricants from "./pages/Lubricants";
 import AMC from "./pages/AMC";
 import Warranty from "./pages/Warranty";
+import InsuranceClaim from "./pages/InsuranceClaim";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/lubricants" element={<Lubricants />} />
         <Route path="/amc" element={<AMC />} />
         <Route path="/warranty" element={<Warranty />} />
+        <Route path="/insurance-claim" element={<InsuranceClaim />} />
       </Routes>
     </Router>
   );
