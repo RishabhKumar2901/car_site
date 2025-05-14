@@ -1,7 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import { offeredServicesData } from "../static/offeredServicesData";
 
-const OfferedServices = () => {
+type Services = {
+  services: any;
+  description?: string;
+};
+
+const OfferedServices = ({ services, description }: Services) => {
   const navigate = useNavigate();
 
   return (
@@ -9,19 +13,23 @@ const OfferedServices = () => {
       <div className="font-semibold text-2xl lg:text-4xl text-[#222222]">
         Services We Offer
       </div>
-      <div className="font-normal text-base text-[#5c5c5d] my-5 w-[46%] hidden lg:block">
-        Find the best service packages for your car. Select from a wide range of
-        car services, from general service to{" "}
-        <a href="#" className="text-[#f04046]">
-          car wash,
-        </a>{" "}
-        accidental repair to custom repair, cashless insurance claims, and much
-        more.
-      </div>
-      <div className="flex xl:w-3/4 lg:1/2 flex-wrap justify-center items-center">
-        {offeredServicesData?.map((item, index) => (
+      {description ? (
+        <></>
+      ) : (
+        <div className="font-normal text-base text-[#5c5c5d] my-5 w-[46%] hidden lg:block">
+          Find the best service packages for your car. Select from a wide range
+          of car services, from general service to{" "}
+          <a href="#" className="text-[#f04046]">
+            car wash,
+          </a>{" "}
+          accidental repair to custom repair, cashless insurance claims, and
+          much more.
+        </div>
+      )}
+      <div className={`flex w-full flex-wrap justify-center items-center ${description && "mt-6"}`}>
+        {services?.map((item: any, index: any) => (
           <div
-            className="flex flex-col bg-[#e8e8e8] rounded-lg px-6 lg:px-0 py-3 border-2 border-[#d6d7d6] mx-2 my-3 items-center justify-center lg:w-[13.5%] flex-wrap hover:scale-110 cursor-pointer transition ease-in"
+            className="flex flex-col bg-[#e8e8e8] rounded-lg px-6 lg:px-0 py-3 border-2 border-[#d6d7d6] mx-2 my-3 items-center justify-center lg:w-[15%] flex-wrap hover:scale-110 cursor-pointer transition ease-in"
             key={index}
             onClick={() => navigate(item?.directedUrl)}
           >

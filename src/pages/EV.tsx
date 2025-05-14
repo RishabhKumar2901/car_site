@@ -1,23 +1,21 @@
 import Footer from "../components/Footer";
 import UpperFooter from "../components/UpperFooter";
 import app_banner from "../assets/app_banner.png";
-import VehicleCareBenifits from "../components/VehicleCareBenifits";
-import BrandsCarousel from "../components/BrandsCarousel";
-import OfferedServices from "../components/OfferedServices";
 import Navbar from "../components/Navbar";
-import CustomerReviews from "../components/CustomerReviews";
-import BookCarService from "../components/BookCarService";
+import BookEVService from "../components/BookEVService";
+import EVFleetManagement from "../components/EVFleetManagement";
+import OfferedServices from "../components/OfferedServices";
 import { offeredServicesData } from "../static/offeredServicesData";
+import EVFleetAdvantages from "../components/EVFleetAdvantages";
 
-const Home = () => {
+const EV = () => {
   return (
-    <div className="bg-[#fafafb]">
+    <div className="bg-[#fffefe]">
       <Navbar />
-      <BookCarService />
-      <OfferedServices services={offeredServicesData?.all} />
-      <BrandsCarousel />
-      <VehicleCareBenifits />
-      <CustomerReviews />
+      <BookEVService />
+      <EVFleetManagement />
+      <OfferedServices services={offeredServicesData?.ev} description="hide" />
+      <EVFleetAdvantages />
       <a
         href="https://apps.apple.com/in/app/vehiclecare/id1634342039?mt=8"
         className="w-full flex justify-center px-4"
@@ -30,4 +28,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default EV;

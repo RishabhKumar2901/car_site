@@ -9,15 +9,27 @@ import service8 from "../assets/service8.png";
 import service9 from "../assets/service9.png";
 import service10 from "../assets/service10.png";
 
-export const offeredServicesData = [
-  { imageUrl: service1, serviceName: "Car Service", directedUrl: "#" },
-  { imageUrl: service2, serviceName: "Wheel Care", directedUrl: "#" },
-  { imageUrl: service3, serviceName: "Car AC Repair", directedUrl: "#" },
-  { imageUrl: service4, serviceName: "Car Battery", directedUrl: "#" },
-  { imageUrl: service5, serviceName: "Dent Paint", directedUrl: "#" },
-  { imageUrl: service6, serviceName: "Custom Repair", directedUrl: "#" },
-  { imageUrl: service7, serviceName: "Insurance Claim", directedUrl: "/insurance-claim" },
-  { imageUrl: service8, serviceName: "AMC", directedUrl: "/amc" },
-  { imageUrl: service9, serviceName: "Warranty", directedUrl: "/warranty" },
-  { imageUrl: service10, serviceName: "EV", directedUrl: "#" },
-];
+export const offeredServicesData = {
+  all: [
+    { imageUrl: service1, serviceName: "Car Service", directedUrl: "#" },
+    { imageUrl: service2, serviceName: "Wheel Care", directedUrl: "#" },
+    { imageUrl: service3, serviceName: "Car AC Repair", directedUrl: "#" },
+    { imageUrl: service4, serviceName: "Car Battery", directedUrl: "#" },
+    { imageUrl: service5, serviceName: "Dent Paint", directedUrl: "#" },
+    { imageUrl: service6, serviceName: "Custom Repair", directedUrl: "#" },
+    {
+      imageUrl: service7,
+      serviceName: "Insurance Claim",
+      directedUrl: "/insurance-claim",
+    },
+    { imageUrl: service8, serviceName: "AMC", directedUrl: "/amc" },
+    { imageUrl: service9, serviceName: "Warranty", directedUrl: "/warranty" },
+    { imageUrl: service10, serviceName: "EV", directedUrl: "/ev" },
+  ],
+  ev: [
+    { imageUrl: service1, serviceName: "Service", directedUrl: "#" },
+    { imageUrl: service2, serviceName: "Wheel Care", directedUrl: "#" },
+    { imageUrl: service3, serviceName: "Motor", directedUrl: "#" },
+    { imageUrl: service4, serviceName: "Battery", directedUrl: "#" },
+  ],
+};
