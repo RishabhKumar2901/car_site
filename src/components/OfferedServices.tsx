@@ -26,7 +26,7 @@ const OfferedServices = ({ services, description }: Services) => {
           much more.
         </div>
       )}
-      <div className={`flex w-5/6 flex-wrap justify-center items-center ${description && "mt-6"}`}>
+      <div className={`flex xl:w-3/4 lg:1/2 flex-wrap justify-center items-center ${description && "mt-6"}`}>
         {services?.map((item: any, index: any) => (
           <div
             className="flex flex-col bg-[#e8e8e8] rounded-lg px-6 lg:px-0 py-3 border-2 border-[#d6d7d6] mx-2 my-3 items-center justify-center lg:w-[13.5%] flex-wrap hover:scale-110 cursor-pointer transition ease-in"

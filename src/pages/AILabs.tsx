@@ -10,33 +10,35 @@ const AILabs = () => {
     <div className="bg-[#fefffe] font-montserrat">
       <Navbar />
 
-      <div className="w-full flex justify-center pt-32">
-        <div className="w-[36%]">
+      <div className="w-full flex flex-col-reverse xl:flex-row justify-center items-center gap-8 pt-32 px-4">
+        <div className="w-full xl:w-[36%] font-semibold text-2xl lg:text-4xl">
+          Welcome To <span className="text-[#ed1d25]">VehicleAI Labs: </span>
+          Revolutionizing Vehicle Care In India
           {parseFormattedText(aiLabsData?.section1?.text)}
         </div>
 
-        <div>
+        <div className="w-full xl:w-auto text-center xl:text-right">
           <div
-            className="text-[#ed1d25] text-4xl font-black text-end mb-5"
+            className="text-[#ed1d25] text-3xl xl:text-4xl font-black mb-5"
             style={{
               textShadow: "2px 5px #000",
             }}
           >
-            Comming Soon
+            Coming Soon
           </div>
           <img
             src={aiLabsData?.section1?.image}
             alt="AI Labs Image"
-            className="w-[35.813rem] h-[18.801rem]"
+            className="w-full max-w-[35.813rem] h-auto pointer-events-none"
           />
         </div>
       </div>
 
-      <div className="w-full flex justify-center mt-10">
-      <div className="w-[36%]">
-          {parseFormattedText(aiLabsData?.section1?.text)}
+      <div className="w-full flex justify-center mt-4 px-4">
+        <div className="w-full xl:max-w-[70rem] 2xl:max-w-[75rem]">
+          {parseFormattedText(aiLabsData?.section2, "mt-4")}
         </div>
-        </div>
+      </div>
 
       <a
         href="https://apps.apple.com/in/app/vehiclecare/id1634342039?mt=8"
