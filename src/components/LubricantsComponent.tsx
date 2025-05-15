@@ -22,7 +22,7 @@ const LubricantsComponent = () => {
         </div>
 
         <div className="mt-4 w-full">
-          {parseFormattedText(lubricantsData?.text, "mb-6")}
+          {parseFormattedText({ text: lubricantsData?.text, margin: "mb-6" })}
         </div>
 
         <div className="flex justify-center">

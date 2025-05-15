@@ -14,7 +14,7 @@ const AILabs = () => {
         <div className="w-full xl:w-[36%] font-semibold text-2xl lg:text-4xl">
           Welcome To <span className="text-[#ed1d25]">VehicleAI Labs: </span>
           Revolutionizing Vehicle Care In India
-          {parseFormattedText(aiLabsData?.section1?.text)}
+          {parseFormattedText({text: aiLabsData?.section1?.text})}
         </div>
 
         <div className="w-full xl:w-auto text-center xl:text-right">
@@ -36,7 +36,7 @@ const AILabs = () => {
 
       <div className="w-full flex justify-center mt-4 px-4">
         <div className="w-full xl:max-w-[70rem] 2xl:max-w-[75rem]">
-          {parseFormattedText(aiLabsData?.section2, "mt-4")}
+          {parseFormattedText({text: aiLabsData?.section2, margin: "mt-4"})}
         </div>
       </div>
 

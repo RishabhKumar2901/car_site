@@ -7,11 +7,10 @@ const EVFleetAdvantages = () => {
       <div className="flex flex-col items-center bg-[#fbfbfb] py-10 w-full">
         <div className="w-[95%] xl:w-[70%] flex flex-col">
           <div className="text-2xl lg:text-4xl font-semibold mt-4 font-montserrat text-center">
-            {parseFormattedText(
-              evFleetManagementData?.section2?.heading,
-              undefined,
-              "#52ae48"
-            )}
+            {parseFormattedText({
+              text: evFleetManagementData?.section2?.heading,
+              color: "#52ae48",
+            })}
           </div>
 
           <div className="mt-4 flex flex-wrap gap-3 justify-center">
@@ -34,11 +33,10 @@ const EVFleetAdvantages = () => {
 
         <div className="w-[95%] xl:w-[70%] flex flex-col mt-20">
           <div className="text-2xl lg:text-4xl font-semibold mt-4 font-montserrat text-center">
-            {parseFormattedText(
-              evFleetManagementData?.section3?.heading,
-              undefined,
-              "#52ae48"
-            )}
+            {parseFormattedText({
+              text: evFleetManagementData?.section3?.heading,
+              color: "#52ae48",
+            })}
           </div>
 
           <div className="mt-4 flex flex-wrap gap-x-5 gap-y-3 justify-center w-full">
@@ -57,7 +55,6 @@ const EVFleetAdvantages = () => {
             ))}
           </div>
         </div>
-
       </div>
     </div>
   );

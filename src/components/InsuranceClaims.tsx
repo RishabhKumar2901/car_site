@@ -14,7 +14,7 @@ const InsuranceClaims = () => {
             {insuranceClaimData?.heading1}
           </div>
           <div>
-            {parseFormattedText(insuranceClaimData?.description1)}
+            {parseFormattedText({text: insuranceClaimData?.description1})}
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@ const InsuranceClaims = () => {
           </div>
 
           <div className="mt-5">
-            {parseFormattedText(insuranceClaimData?.description3, "mt-2")}
+            {parseFormattedText({text: insuranceClaimData?.description3, margin: "mt-2"})}
           </div>
         </div>
       </div>
@@ -46,23 +46,23 @@ const InsuranceClaims = () => {
           </div>
 
           <div className="mt-5">
-            {parseFormattedText(insuranceClaimData?.description4?.section1)}
+            {parseFormattedText({text: insuranceClaimData?.description4?.section1})}
           </div>
 
           <div className="mt-6 pl-10">
-            {parseFormattedText(insuranceClaimData?.description4?.section2, "mt-2")}
+            {parseFormattedText({text: insuranceClaimData?.description4?.section2, margin: "mt-2"})}
           </div>
 
           <div className="text-2xl lg:text-4xl font-semibold mt-20 font-montserrat">
-            {parseFormattedText(insuranceClaimData?.heading5)}
+            {parseFormattedText({text: insuranceClaimData?.heading5})}
           </div>
 
           <div className="mt-5">
-            {parseFormattedText(insuranceClaimData?.description5?.section1)}
+            {parseFormattedText({text: insuranceClaimData?.description5?.section1})}
           </div>
 
           <div className="mt-6 pl-10">
-            {parseFormattedText(insuranceClaimData?.description5?.section2, "mt-2")}
+            {parseFormattedText({text: insuranceClaimData?.description5?.section2, margin: "mt-2"})}
           </div>
         </div>
       </div>

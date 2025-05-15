@@ -8,14 +8,16 @@
 // !! => red bold heading
 // && => black bold heading
 
-export const parseFormattedText = (
-  text: string,
-  mb?: string,
-  color?: string
-) => {
+type FormattedText = {
+  text: string;
+  margin?: string;
+  color?: string;
+};
+
+export const parseFormattedText = ({ text, margin, color }: FormattedText) => {
   return text.split("\n").map((line: string, index: number) => {
     if (line.trim() === "") {
-      return <div key={index} className={mb ? mb : "mb-8"} />;
+      return <div key={index} className={margin ? margin : "mb-8"} />;
     }
 
     const parts = [];

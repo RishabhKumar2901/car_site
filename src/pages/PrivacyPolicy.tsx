@@ -11,13 +11,13 @@ const PrivacyPolicy = () => {
       <Navbar />
       <div className="w-full flex flex-col items-center pt-20">
         <div className="w-[90%] xl:w-[69%]">
-          {parseFormattedText(privacyPolicyData[0])}
+          {parseFormattedText({ text: privacyPolicyData[0] })}
         </div>
         <div className="text-4xl font-semibold text-[#ec1c25] w-[90%] xl:w-[69%]">
           Privacy Policy
         </div>
         <div className="w-[90%] xl:w-[69%]">
-          {parseFormattedText(privacyPolicyData[1])}
+          {parseFormattedText({ text: privacyPolicyData[1] })}
         </div>
       </div>
       <a

@@ -12,17 +12,17 @@ const WarrantyPlan = () => {
           {warrantyData?.warrantyplan?.heading}
         </div>
         <div>
-          {parseFormattedText(warrantyData?.warrantyplan?.section1)}
+          {parseFormattedText({text: warrantyData?.warrantyplan?.section1})}
         </div>
         <div className="border-t-[1px] border-[#e9e9e9] w-full my-6"></div>
         <div>
-          {parseFormattedText(warrantyData?.warrantyplan?.section2)}
+          {parseFormattedText({text: warrantyData?.warrantyplan?.section2})}
         </div>
         <div className="border-t-[1px] border-[#e9e9e9] w-full my-6"></div>
         <img src={warrantyData?.warrantyplan?.banner} alt="Banner" className="w-[54.094rem] h-[36.229rem] pointer-events-none" />
         <div className="border-t-[1px] border-[#e9e9e9] w-full my-6"></div>
         <div>
-          {parseFormattedText(warrantyData?.warrantyplan?.section3)}
+          {parseFormattedText({text: warrantyData?.warrantyplan?.section3})}
         </div>
       </div>
     </div>

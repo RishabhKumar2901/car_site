@@ -28,7 +28,7 @@ const About = () => {
               className="text-base text-[#747474] leading-[1.8rem] md:w-9/12 pt-5 pb-7 px-4 md:px-7 text-left h-fit shadow-md"
               style={{ boxShadow: "0 0 20px rgba(0,0,0,.1)" }}
             >
-              {parseFormattedText(item?.text)}
+              {parseFormattedText({text: item?.text})}
             </div>
           </div>
         ))}

@@ -12,15 +12,15 @@ const AnnualMaintainanceContract = () => {
           {amcData?.annualMaintainanceContractData?.heading}
         </div>
         <div>
-          {parseFormattedText(amcData?.annualMaintainanceContractData?.section1)}
+          {parseFormattedText({text: amcData?.annualMaintainanceContractData?.section1})}
         </div>
         <div className="border-t-[1px] border-[#e9e9e9] w-full my-6"></div>
         <div>
-          {parseFormattedText(amcData?.annualMaintainanceContractData?.section2)}
+          {parseFormattedText({text: amcData?.annualMaintainanceContractData?.section2})}
         </div>
         <div className="border-t-[1px] border-[#e9e9e9] w-full my-6"></div>
         <div>
-          {parseFormattedText(amcData?.annualMaintainanceContractData?.section3)}
+          {parseFormattedText({text: amcData?.annualMaintainanceContractData?.section3})}
         </div>
       </div>
     </div>

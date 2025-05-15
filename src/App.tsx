@@ -14,6 +14,7 @@ import Warranty from "./pages/Warranty";
 import InsuranceClaim from "./pages/InsuranceClaim";
 import EV from "./pages/EV";
 import AILabs from "./pages/AILabs";
+import CarServices from "./pages/CarServices";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/insurance-claim" element={<InsuranceClaim />} />
         <Route path="/ev" element={<EV />} />
         <Route path="/ai-labs" element={<AILabs />} />
+        <Route path="/services" element={<CarServices />} />
       </Routes>
     </Router>
   );
