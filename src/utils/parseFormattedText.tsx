@@ -12,9 +12,10 @@ type FormattedText = {
   text: string;
   margin?: string;
   color?: string;
+  boldType?: string
 };
 
-export const parseFormattedText = ({ text, margin, color }: FormattedText) => {
+export const parseFormattedText = ({ text, margin, color, boldType }: FormattedText) => {
   return text.split("\n").map((line: string, index: number) => {
     if (line.trim() === "") {
       return <div key={index} className={margin ? margin : "mb-8"} />;
@@ -43,7 +44,7 @@ export const parseFormattedText = ({ text, margin, color }: FormattedText) => {
             key={match.index}
             className={`text-[${
               color ? color : "#ee363c"
-            }] text-base lg:text-lg font-bold`}
+            }] text-base lg:text-lg ${boldType ? boldType : "font-bold"}`}
           >
             {matchText.slice(2, -2)}
           </span>
@@ -52,7 +53,7 @@ export const parseFormattedText = ({ text, margin, color }: FormattedText) => {
         parts.push(
           <span
             key={match.index}
-            className="text-sm lg:text-base font-bold text-[#606061]"
+            className={`text-sm lg:text-base ${boldType ? boldType : "font-bold"} text-[#606061]`}
           >
             {matchText.slice(2, -2)}
           </span>
@@ -61,7 +62,7 @@ export const parseFormattedText = ({ text, margin, color }: FormattedText) => {
         parts.push(
           <span
             key={match.index}
-            className={`text-xl lg:text-2xl font-bold text-[${
+            className={`text-xl lg:text-2xl ${boldType ? boldType : "font-bold"} text-[${
               color ? color : "#ee363c"
             }]`}
           >
@@ -72,7 +73,7 @@ export const parseFormattedText = ({ text, margin, color }: FormattedText) => {
         parts.push(
           <span
             key={match.index}
-            className="text-xl lg:text-2xl font-bold text-[#202429]"
+            className={`text-xl lg:text-2xl ${boldType ? boldType : "font-bold"} text-[#202429]`}
           >
             {matchText.slice(2, -2)}
           </span>
@@ -94,7 +95,7 @@ export const parseFormattedText = ({ text, margin, color }: FormattedText) => {
             key={match.index}
             className={`text-2xl lg:text-4xl text-[${
               color ? color : "#ee363c"
-            }] font-semibold`}
+            }] ${boldType ? boldType : "font-semibold"}`}
           >
             {matchText.slice(2, -2)}
           </span>
@@ -103,7 +104,7 @@ export const parseFormattedText = ({ text, margin, color }: FormattedText) => {
         parts.push(
           <span
             key={match.index}
-            className="text-2xl lg:text-4xl text-[#202429] font-semibold"
+            className={`text-2xl lg:text-4xl text-[#202429] ${boldType ? boldType : "font-semibold"}`}
           >
             {matchText.slice(2, -2)}
           </span>
@@ -114,7 +115,7 @@ export const parseFormattedText = ({ text, margin, color }: FormattedText) => {
             key={match.index}
             className={`text-xl lg:text-[1.75rem] text-[${
               color ? color : "#ee363c"
-            }] font-semibold`}
+            }] ${boldType ? boldType : "font-semibold"}`}
           >
             {matchText.slice(2, -2)}
           </span>
@@ -123,7 +124,7 @@ export const parseFormattedText = ({ text, margin, color }: FormattedText) => {
         parts.push(
           <span
             key={match.index}
-            className="text-xl lg:text-[1.75rem] text-[#202429] font-semibold"
+            className={`text-xl lg:text-[1.75rem] text-[#202429] ${boldType ? boldType : "font-semibold"}`}
           >
             {matchText.slice(2, -2)}
           </span>

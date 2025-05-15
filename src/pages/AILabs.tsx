@@ -11,7 +11,7 @@ const AILabs = () => {
       <Navbar />
 
       <div className="w-full flex flex-col-reverse xl:flex-row justify-center items-center gap-8 pt-32 px-4">
-        <div className="w-full xl:w-[36%] font-semibold text-2xl lg:text-4xl">
+        <div className="w-full xl:w-[36%] font-bold text-2xl lg:text-[2rem]">
           Welcome To <span className="text-[#ed1d25]">VehicleAI Labs: </span>
           Revolutionizing Vehicle Care In India
           {parseFormattedText({text: aiLabsData?.section1?.text})}
@@ -36,7 +36,7 @@ const AILabs = () => {
 
       <div className="w-full flex justify-center mt-4 px-4">
         <div className="w-full xl:max-w-[70rem] 2xl:max-w-[75rem]">
-          {parseFormattedText({text: aiLabsData?.section2, margin: "mt-4"})}
+          {parseFormattedText({text: aiLabsData?.section2, margin: "mt-4", boldType: "font-bold"})}
         </div>
       </div>
 
