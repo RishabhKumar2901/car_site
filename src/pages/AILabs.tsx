@@ -34,7 +34,7 @@ const AILabs = () => {
         </div>
       </div>
 
-      <div className="w-full flex justify-center mt-4 px-4">
+      <div className="w-full flex justify-center px-4">
         <div className="w-full xl:max-w-[70rem] 2xl:max-w-[75rem]">
           {parseFormattedText({text: aiLabsData?.section2, margin: "mt-4", boldType: "font-bold"})}
         </div>

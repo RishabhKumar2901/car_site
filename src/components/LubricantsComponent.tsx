@@ -21,8 +21,8 @@ const LubricantsComponent = () => {
           {lubricantsData?.heading}
         </div>
 
-        <div className="mt-4 w-full">
-          {parseFormattedText({ text: lubricantsData?.text, margin: "mb-6" })}
+        <div className="mt-6 w-full">
+          {parseFormattedText({ text: lubricantsData?.text, margin: "mb-4" })}
         </div>
 
         <div className="flex justify-center">

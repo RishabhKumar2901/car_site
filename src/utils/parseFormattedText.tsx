@@ -12,10 +12,19 @@ type FormattedText = {
   text: string;
   margin?: string;
   color?: string;
-  boldType?: string
+  boldType?: string;
+  leadingSize?: string;
+  trackingType?: string;
 };
 
-export const parseFormattedText = ({ text, margin, color, boldType }: FormattedText) => {
+export const parseFormattedText = ({
+  text,
+  margin,
+  color,
+  boldType,
+  leadingSize,
+  trackingType,
+}: FormattedText) => {
   return text.split("\n").map((line: string, index: number) => {
     if (line.trim() === "") {
       return <div key={index} className={margin ? margin : "mb-8"} />;
@@ -44,7 +53,9 @@ export const parseFormattedText = ({ text, margin, color, boldType }: FormattedT
             key={match.index}
             className={`text-[${
               color ? color : "#ee363c"
-            }] text-base lg:text-lg ${boldType ? boldType : "font-bold"}`}
+            }] text-base font-montserrat lg:text-lg ${
+              boldType ? boldType : "font-bold"
+            }`}
           >
             {matchText.slice(2, -2)}
           </span>
@@ -53,7 +64,9 @@ export const parseFormattedText = ({ text, margin, color, boldType }: FormattedT
         parts.push(
           <span
             key={match.index}
-            className={`text-sm lg:text-base ${boldType ? boldType : "font-bold"} text-[#606061]`}
+            className={`text-sm lg:text-base font-montserrat ${
+              boldType ? boldType : "font-bold"
+            } text-[#606061]`}
           >
             {matchText.slice(2, -2)}
           </span>
@@ -62,9 +75,9 @@ export const parseFormattedText = ({ text, margin, color, boldType }: FormattedT
         parts.push(
           <span
             key={match.index}
-            className={`text-xl lg:text-2xl ${boldType ? boldType : "font-bold"} text-[${
-              color ? color : "#ee363c"
-            }]`}
+            className={`text-xl lg:text-2xl font-montserrat ${
+              boldType ? boldType : "font-bold"
+            } text-[${color ? color : "#ee363c"}]`}
           >
             {matchText.slice(2, -2)}
           </span>
@@ -73,7 +86,9 @@ export const parseFormattedText = ({ text, margin, color, boldType }: FormattedT
         parts.push(
           <span
             key={match.index}
-            className={`text-xl lg:text-2xl ${boldType ? boldType : "font-bold"} text-[#202429]`}
+            className={`text-xl lg:text-2xl font-montserrat ${
+              boldType ? boldType : "font-bold"
+            } text-[#202429]`}
           >
             {matchText.slice(2, -2)}
           </span>
@@ -82,9 +97,9 @@ export const parseFormattedText = ({ text, margin, color, boldType }: FormattedT
         parts.push(
           <span
             key={match.index}
-            className={`text-sm lg:text-base text-[${
-              color ? color : "#ee363c"
-            }]`}
+            className={`text-sm lg:text-base font-montserrat ${
+              boldType && boldType
+            } text-[${color ? color : "#ee363c"}]`}
           >
             {matchText.slice(2, -2)}
           </span>
@@ -93,7 +108,7 @@ export const parseFormattedText = ({ text, margin, color, boldType }: FormattedT
         parts.push(
           <span
             key={match.index}
-            className={`text-2xl lg:text-4xl text-[${
+            className={`text-2xl lg:text-4xl font-montserrat text-[${
               color ? color : "#ee363c"
             }] ${boldType ? boldType : "font-semibold"}`}
           >
@@ -104,7 +119,9 @@ export const parseFormattedText = ({ text, margin, color, boldType }: FormattedT
         parts.push(
           <span
             key={match.index}
-            className={`text-2xl lg:text-4xl text-[#202429] ${boldType ? boldType : "font-semibold"}`}
+            className={`text-2xl lg:text-4xl font-montserrat text-[#202429] ${
+              boldType ? boldType : "font-semibold"
+            }`}
           >
             {matchText.slice(2, -2)}
           </span>
@@ -113,7 +130,7 @@ export const parseFormattedText = ({ text, margin, color, boldType }: FormattedT
         parts.push(
           <span
             key={match.index}
-            className={`text-xl lg:text-[1.75rem] text-[${
+            className={`text-xl lg:text-[1.75rem] font-montserrat text-[${
               color ? color : "#ee363c"
             }] ${boldType ? boldType : "font-semibold"}`}
           >
@@ -124,7 +141,9 @@ export const parseFormattedText = ({ text, margin, color, boldType }: FormattedT
         parts.push(
           <span
             key={match.index}
-            className={`text-xl lg:text-[1.75rem] text-[#202429] ${boldType ? boldType : "font-semibold"}`}
+            className={`text-xl lg:text-[1.75rem] text-[#202429] font-montserrat ${
+              boldType ? boldType : "font-semibold"
+            }`}
           >
             {matchText.slice(2, -2)}
           </span>
@@ -141,9 +160,13 @@ export const parseFormattedText = ({ text, margin, color, boldType }: FormattedT
     return (
       <div
         key={index}
-        className={`mb-2 ${
-          hasHeading && "mb-0"
-        } leading-[1.8rem] tracking-wide text-[#555] font-light text-sm lg:text-base lg:leading-[1.8rem] lg:tracking-wide`}
+        className={`${margin ? margin : "mb-2"} ${hasHeading && "mb-0"} ${
+          leadingSize ? leadingSize : "leading-[1.8rem]"
+        } ${
+          trackingType ? trackingType : "tracking-wide"
+        } text-[#555] font-light font-montserrat text-sm lg:text-base ${
+          leadingSize ? `lg:${leadingSize}` : "lg:leading-[1.8rem]"
+        } ${trackingType ? `lg:${trackingType}` : "lg:tracking-wide"}`}
       >
         {parts}
       </div>

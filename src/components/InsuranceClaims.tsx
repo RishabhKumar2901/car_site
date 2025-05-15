@@ -33,7 +33,7 @@ const InsuranceClaims = () => {
             {insuranceClaimData?.heading3}
           </div>
 
-          <div className="mt-5">
+          <div className="mt-3">
             {parseFormattedText({text: insuranceClaimData?.description3, margin: "mt-2"})}
           </div>
         </div>
@@ -49,7 +49,7 @@ const InsuranceClaims = () => {
             {parseFormattedText({text: insuranceClaimData?.description4?.section1})}
           </div>
 
-          <div className="mt-6 pl-10">
+          <div className="mt-4 pl-10">
             {parseFormattedText({text: insuranceClaimData?.description4?.section2, margin: "mt-2"})}
           </div>
 
@@ -61,7 +61,7 @@ const InsuranceClaims = () => {
             {parseFormattedText({text: insuranceClaimData?.description5?.section1})}
           </div>
 
-          <div className="mt-6 pl-10">
+          <div className="mt-4 pl-10">
             {parseFormattedText({text: insuranceClaimData?.description5?.section2, margin: "mt-2"})}
           </div>
         </div>
