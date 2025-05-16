@@ -1,4 +1,4 @@
-import { carScrappingSection2Data } from "../../static/CarScrappingData/CarScrappingSection2Data";
+import { carScrappingSection2Data } from "../../static/CarScrappingData/carScrappingSection2Data";
 
 const CarScrappingSection2 = () => {
   return (
