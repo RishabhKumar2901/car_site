@@ -52,7 +52,7 @@ export const upperFooterData = [
       { to: "Car AC Repair Near Me", link: "#" },
       { to: "Car Repair Near Me", link: "#" },
       { to: "Car Service Near Me", link: "#" },
-      { to: "Car Scrapping", link: "#" },
+      { to: "Car Scrapping", link: "/car-scrapping" },
       { to: "Partner Workshop", link: "#" },
     ],
   },

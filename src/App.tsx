@@ -15,6 +15,7 @@ import InsuranceClaim from "./pages/InsuranceClaim";
 import EV from "./pages/EV";
 import AILabs from "./pages/AILabs";
 import CarServices from "./pages/CarServices";
+import CarScrapping from "./pages/CarScrapping";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/ev" element={<EV />} />
         <Route path="/ai-labs" element={<AILabs />} />
         <Route path="/services" element={<CarServices />} />
+        <Route path="/car-scrapping" element={<CarScrapping />} />
       </Routes>
     </Router>
   );
