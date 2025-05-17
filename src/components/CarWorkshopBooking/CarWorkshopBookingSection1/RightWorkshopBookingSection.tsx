@@ -59,7 +59,7 @@ const RightWorkshopBookingSection = () => {
                 <img
                   src={item?.imageUrl}
                   alt={`Service${index}`}
-                  className="w-full h-full object-cover rounded-md"
+                  className="w-full h-full object-cover rounded-md pointer-events-none"
                 />
               </div>
               <div className="text-[#212428] text-sm sm:text-base font-semibold mt-3 text-center">
