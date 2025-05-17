@@ -2,7 +2,7 @@ import { carWorkshopBookingSection2Data } from "../../static/CarWorkshopBookingD
 
 const CarWorkshopBookingSection2 = () => {
   return (
-    <div className="w-full flex flex-col items-center lg:pl-3 mt-6 lg:mt-0 px-2 pt-5 pb-10 bg-[#fefefe]">
+    <div className="w-full flex flex-col items-center lg:pl-3 mb-2 lg:mt-0 px-2 pt-5 pb-10 bg-[#fefefe]">
       <div className="w-full sm:w-[95%]">
         <div className="text-[1.625rem] font-semibold w-full mt-8 tracking-wider">
           {carWorkshopBookingSection2Data?.heading}
