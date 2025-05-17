@@ -7,6 +7,7 @@ const CarWorkshopBookingSection2 = () => {
         <div className="text-[1.625rem] font-semibold w-full mt-8 tracking-wider">
           {carWorkshopBookingSection2Data?.heading}
         </div>
+        <div className="bg-[#FF5757] h-0.5 w-1/12 mt-3"></div>
         <div className="text-sm font-normal text-[#777] w-full tracking-wider mt-4">
           {carWorkshopBookingSection2Data?.subheading}
         </div>

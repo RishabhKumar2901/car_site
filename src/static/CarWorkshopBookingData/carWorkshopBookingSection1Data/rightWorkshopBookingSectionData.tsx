@@ -11,21 +11,61 @@ export const rightWorkshopBookingSectionData = {
   heading1: "A Simpler Way To Car Service",
   subheading1: "Get instant service quote",
 
-  heading2: "Car Service Available In VehicleCare - Car Experts Automobiles LLP",
-  subheading2: "Find the best service packages for your car. Select from a wide range of car services, from general service, car wash, accidental repair to custom repairs, cashless insurance claims and much more.",
+  brands: ["Maruti", "Hyundai", "Honda", "Tata", "Toyota"],
+
+  models: {
+    Maruti: ["Swift", "Baleno", "WagonR"],
+    Hyundai: ["i20", "Creta", "Venue"],
+    Honda: ["City", "Amaze"],
+    Tata: ["Nexon", "Punch"],
+    Toyota: ["Innova", "Fortuner"],
+  },
+
+  heading2:
+    "Car Service Available In VehicleCare - Car Experts Automobiles LLP",
+  subheading2:
+    "Find the best service packages for your car. Select from a wide range of car services, from general service, car wash, accidental repair to custom repairs, cashless insurance claims and much more.",
 
   workshop: [
-    { imageUrl: workshopService_img1, serviceName: "Car Wash", directedUrl: "/#" },
-    { imageUrl: workshopService_img2, serviceName: "Wheel Care", directedUrl: "/#" },
-    { imageUrl: workshopService_img3, serviceName: "Car AC Repair", directedUrl: "/#" },
-    { imageUrl: workshopService_img4, serviceName: "Car Battery", directedUrl: "/#" },
-    { imageUrl: workshopService_img5, serviceName: "Denting & Painting", directedUrl: "/#" },
-    { imageUrl: workshopService_img6, serviceName: "Custom Repairs", directedUrl: "/#" },
+    {
+      imageUrl: workshopService_img1,
+      serviceName: "Car Wash",
+      directedUrl: "/#",
+    },
+    {
+      imageUrl: workshopService_img2,
+      serviceName: "Wheel Care",
+      directedUrl: "/#",
+    },
+    {
+      imageUrl: workshopService_img3,
+      serviceName: "Car AC Repair",
+      directedUrl: "/#",
+    },
+    {
+      imageUrl: workshopService_img4,
+      serviceName: "Car Battery",
+      directedUrl: "/#",
+    },
+    {
+      imageUrl: workshopService_img5,
+      serviceName: "Denting & Painting",
+      directedUrl: "/#",
+    },
+    {
+      imageUrl: workshopService_img6,
+      serviceName: "Custom Repairs",
+      directedUrl: "/#",
+    },
     {
       imageUrl: workshopService_img7,
       serviceName: "Periodic Service",
       directedUrl: "/#",
     },
-    { imageUrl: workshopService_img8, serviceName: "Insurance Claim", directedUrl: "/#" },
-  ]
+    {
+      imageUrl: workshopService_img8,
+      serviceName: "Insurance Claim",
+      directedUrl: "/#",
+    },
+  ],
 };
