@@ -11,12 +11,12 @@ import service10 from "../assets/service10.png";
 
 export const offeredServicesData = {
   all: [
-    { imageUrl: service1, serviceName: "Car Service", directedUrl: "#" },
-    { imageUrl: service2, serviceName: "Wheel Care", directedUrl: "#" },
-    { imageUrl: service3, serviceName: "Car AC Repair", directedUrl: "#" },
-    { imageUrl: service4, serviceName: "Car Battery", directedUrl: "#" },
-    { imageUrl: service5, serviceName: "Dent Paint", directedUrl: "#" },
-    { imageUrl: service6, serviceName: "Custom Repair", directedUrl: "#" },
+    { imageUrl: service1, serviceName: "Car Service", directedUrl: "/#" },
+    { imageUrl: service2, serviceName: "Wheel Care", directedUrl: "/#" },
+    { imageUrl: service3, serviceName: "Car AC Repair", directedUrl: "/#" },
+    { imageUrl: service4, serviceName: "Car Battery", directedUrl: "/#" },
+    { imageUrl: service5, serviceName: "Dent Paint", directedUrl: "/#" },
+    { imageUrl: service6, serviceName: "Custom Repair", directedUrl: "/#" },
     {
       imageUrl: service7,
       serviceName: "Insurance Claim",
@@ -27,9 +27,9 @@ export const offeredServicesData = {
     { imageUrl: service10, serviceName: "EV", directedUrl: "/ev" },
   ],
   ev: [
-    { imageUrl: service1, serviceName: "Service", directedUrl: "#" },
-    { imageUrl: service2, serviceName: "Wheel Care", directedUrl: "#" },
-    { imageUrl: service3, serviceName: "Motor", directedUrl: "#" },
-    { imageUrl: service4, serviceName: "Battery", directedUrl: "#" },
+    { imageUrl: service1, serviceName: "Service", directedUrl: "/#" },
+    { imageUrl: service2, serviceName: "Wheel Care", directedUrl: "/#" },
+    { imageUrl: service3, serviceName: "Motor", directedUrl: "/#" },
+    { imageUrl: service4, serviceName: "Battery", directedUrl: "/#" },
   ],
 };
