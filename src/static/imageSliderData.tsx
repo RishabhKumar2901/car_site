@@ -11,6 +11,9 @@ import insurance_img2 from "../assets/insurance_img2.jpg";
 import insurance_img3 from "../assets/insurance_img3.jpg";
 import ev_img1 from "../assets/ev_img1.jpg";
 import ev_img2 from "../assets/ev_img2.jpg";
+import bookCarServiceByLocation_img1 from "../assets/bookCarServiceByLocation_img1.jpg";
+import bookCarServiceByLocation_img2 from "../assets/bookCarServiceByLocation_img2.jpg";
+import bookCarServiceByLocation_img3 from "../assets/bookCarServiceByLocation_img3.jpeg";
 
 export const imageSliderData = {
   bookCarServiceData: [
@@ -36,4 +39,9 @@ export const imageSliderData = {
     { name: "Slider1", src: ev_img1 },
     { name: "Slider2", src: ev_img2 },
   ],
+  bookCarServiceByLocationData: [
+    { name: "Slider1", src: bookCarServiceByLocation_img1 },
+    { name: "Slider2", src: bookCarServiceByLocation_img2 },
+    { name: "Slider3", src: bookCarServiceByLocation_img3 },
+  ]
 };

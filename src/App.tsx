@@ -14,9 +14,10 @@ import Warranty from "./pages/Warranty";
 import InsuranceClaim from "./pages/InsuranceClaim";
 import EV from "./pages/EV";
 import AILabs from "./pages/AILabs";
-import CarServices from "./pages/CarServices";
 import CarScrapping from "./pages/CarScrapping";
 import CarWorkshopBooking from "./pages/CarWorkshopBooking";
+import BrandWiseCarServices from "./pages/BrandWiseCarServices";
+import CarService from "./pages/CarService";
 
 function App() {
   return (
@@ -37,7 +38,8 @@ function App() {
         <Route path="/insurance-claim" element={<InsuranceClaim />} />
         <Route path="/ev" element={<EV />} />
         <Route path="/ai-labs" element={<AILabs />} />
-        <Route path="/services" element={<CarServices />} />
+        <Route path="/services" element={<BrandWiseCarServices />} />
+        <Route path="/car-service" element={<CarService />} />
         <Route path="/car-scrapping" element={<CarScrapping />} />
         <Route path="/workshop-booking" element={<CarWorkshopBooking />} />
       </Routes>

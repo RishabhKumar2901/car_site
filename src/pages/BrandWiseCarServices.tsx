@@ -8,7 +8,7 @@ import UpperFooter from "../components/UpperFooter";
 import WhyChooseServices from "../components/WhyChooseServices";
 import { insuranceClaimFAQData } from "../static/insuranceClaimFAQData";
 
-const CarServices = () => {
+const BrandWiseCarServices = () => {
   return (
     <div className="bg-[#fefffe] font-montserrat">
       <Navbar />
@@ -28,4 +28,4 @@ const CarServices = () => {
   );
 };
 
-export default CarServices;
+export default BrandWiseCarServices;
