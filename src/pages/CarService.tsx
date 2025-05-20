@@ -9,6 +9,7 @@ import { offeredServicesData } from "../static/offeredServicesData";
 import BookCarServiceByLocation from "../components/CarService/BookCarServiceByLocation";
 import ServiceStepsAndPrice from "../components/CarService/ServiceStepsAndPrice";
 import WhyChooseCarService from "../components/CarService/WhyChooseCarService";
+import WhatIncludedService from "../components/CarService/WhatIncludedService";
 
 const CarServices = () => {
   return (
@@ -21,6 +22,7 @@ const CarServices = () => {
         <VehicleCareBenifits />
       </div>
       <WhyChooseCarService />
+      <WhatIncludedService />
       <CustomerReviews />
       <a
         href="https://apps.apple.com/in/app/vehiclecare/id1634342039?mt=8"
