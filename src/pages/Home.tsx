@@ -8,6 +8,8 @@ import Navbar from "../components/Navbar";
 import CustomerReviews from "../components/CustomerReviews";
 import BookCarService from "../components/BookCarService";
 import { offeredServicesData } from "../static/offeredServicesData";
+import Glance from "../components/Home/Glance";
+import ForRepairs from "../components/Home/ForRepairs";
 
 const Home = () => {
   return (
@@ -18,6 +20,8 @@ const Home = () => {
       <BrandsCarousel />
       <VehicleCareBenifits />
       <CustomerReviews />
+      <ForRepairs />
+      <Glance />
       <a
         href="https://apps.apple.com/in/app/vehiclecare/id1634342039?mt=8"
         className="w-full flex justify-center px-4"
