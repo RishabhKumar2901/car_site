@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import CarWorkshopBookingSection1 from "../components/CarWorkshopBooking/CarWorkshopBookingSection1";
 import CarWorkshopBookingSection2 from "../components/CarWorkshopBooking/CarWorkshopBookingSection2";
 import CarWorkshopBookingSection3 from "../components/CarWorkshopBooking/CarWorkshopBookingSection3";
@@ -6,12 +7,14 @@ import Navbar from "../components/Navbar";
 import { carWorkshopBookingSection4Data } from "../static/CarWorkshopBookingData/carWorkshopBookingSection4Data";
 
 const CarWorkshopBooking = () => {
+  const location: any = useLocation();
+
   return (
     <div className="bg-[#fef6f6]">
       <Navbar />
 
       <div className="pt-24 px-3 text-[#343a40] font-bold text-4xl bg-[#fefefe]">
-        Car Service Center In Avas Vikas Colony ,Agra
+        Car Service Center In {location?.state?.address2}
       </div>
 
       <CarWorkshopBookingSection1 />
