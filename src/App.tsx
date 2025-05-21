@@ -21,10 +21,12 @@ import CarService from "./pages/CarService";
 import NearByCarService from "./pages/NearByCarService";
 import PartnerWorkshop from "./pages/PartnerWorkshop";
 import Blog from "./pages/Blog";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/termsncondition" element={<TermsConditions />} />
