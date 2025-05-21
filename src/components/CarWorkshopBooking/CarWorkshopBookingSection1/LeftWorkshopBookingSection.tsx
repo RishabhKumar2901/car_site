@@ -52,14 +52,14 @@ const LeftWorkshopBookingSection = () => {
         <div className="flex space-x-3 mt-2">
           <a
             className="bg-[#007bff] text-white rounded w-fit text-[0.813rem] py-2 px-6"
-            href={leftWorkshopBookingSectionData?.mobileNo}
+            href={`tel:${location?.state?.mobileno}`}
           >
             Call
           </a>
 
           <a
             className="bg-[#007bff] text-white rounded w-fit text-[0.813rem] py-2 px-6 flex items-center"
-            href={leftWorkshopBookingSectionData?.location}
+            href={location?.state?.location}
           >
             Map{" "}
             <img
