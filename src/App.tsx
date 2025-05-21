@@ -20,6 +20,7 @@ import BrandWiseCarServices from "./pages/BrandWiseCarServices";
 import CarService from "./pages/CarService";
 import NearByCarService from "./pages/NearByCarService";
 import PartnerWorkshop from "./pages/PartnerWorkshop";
+import Blog from "./pages/Blog";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         <Route path="/workshop-booking" element={<CarWorkshopBooking />} />
         <Route path="/car-workshop-near-me" element={<NearByCarService />} />
         <Route path="/workshop-locator" element={<PartnerWorkshop />} />
+        <Route path="/blog/*" element={<Blog />} />
       </Routes>
     </Router>
   );

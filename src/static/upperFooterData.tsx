@@ -4,7 +4,7 @@ export const upperFooterData = [
     page: [
       { to: "About", link: "/aboutus" },
       { to: "Contact us", link: "/contactus" },
-      { to: "Blog", link: "/#" },
+      { to: "Blog", link: "/blog" },
       { to: "Career", link: "/career" },
       { to: "Media", link: "/media" },
       { to: "Faq", link: "/faq" },
