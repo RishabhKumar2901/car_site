@@ -50,26 +50,32 @@ const CarScrappingSection1 = () => {
           className="border-[1px] rounded-full py-5 px-6 mt-2 shadow-md border-gray-300 placeholder-gray-700 placeholder:text-sm placeholder:font-medium w-full max-w-xs lg:max-w-md"
           placeholder="Select Your Car"
         />
-        {errors?.car && <p className="text-red-600 ml-5 text-sm mt-1">{errors?.car}</p>}
+        {errors?.car && (
+          <p className="text-red-600 ml-5 text-sm mt-1">{errors?.car}</p>
+        )}
 
         <div className="flex flex-col lg:flex-row lg:space-x-2 w-full max-w-xs lg:max-w-md">
           <div className="flex flex-col gap-1">
-          <input
-            value={formData?.mobile}
-            onChange={(e) => handleChange("mobile", e.target.value)}
-            className="border-[1px] rounded-full py-5 px-6 mt-4 shadow-md border-gray-300 placeholder-gray-700 placeholder:text-sm placeholder:font-medium w-full"
-            placeholder="Enter Your Mobile"
-          />
-                  {errors.mobile && <p className="text-red-600 ml-5 text-sm mt-1">{errors?.mobile}</p>}
+            <input
+              value={formData?.mobile}
+              onChange={(e) => handleChange("mobile", e.target.value)}
+              className="border-[1px] rounded-full py-5 px-6 mt-4 shadow-md border-gray-300 placeholder-gray-700 placeholder:text-sm placeholder:font-medium w-full"
+              placeholder="Enter Your Mobile"
+            />
+            {errors.mobile && (
+              <p className="text-red-600 ml-5 text-sm mt-1">{errors?.mobile}</p>
+            )}
           </div>
           <div className="flex flex-col gap-1">
-          <input
-            value={formData?.city}
-            onChange={(e) => handleChange("city", e.target.value)}
-            className="border-[1px] rounded-full py-5 px-6 mt-4 shadow-md border-gray-300 placeholder-gray-700 placeholder:text-sm placeholder:font-medium w-full"
-            placeholder="Select City"
-          />
-          {errors.city && <p className="text-red-600 ml-5 text-sm mt-1">{errors?.city}</p>}
+            <input
+              value={formData?.city}
+              onChange={(e) => handleChange("city", e.target.value)}
+              className="border-[1px] rounded-full py-5 px-6 mt-4 shadow-md border-gray-300 placeholder-gray-700 placeholder:text-sm placeholder:font-medium w-full"
+              placeholder="Select City"
+            />
+            {errors.city && (
+              <p className="text-red-600 ml-5 text-sm mt-1">{errors?.city}</p>
+            )}
           </div>
         </div>
 
