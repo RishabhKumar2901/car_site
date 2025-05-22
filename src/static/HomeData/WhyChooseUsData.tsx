@@ -1,9 +1,17 @@
-export const whyChooseUsData = {
-  title: `%%Why Choose %%##VehicleCare ##%%for Car Services in Gurgaon?%%`,
-  text: `
-Struggling with unreliable **car repair services **or a lack of trustworthy **car mechanics in Gurgaon**? VehicleCare is here to simplify car care for you. With state-of-the-art car workshops and the convenience of doorstep car services, we ensure your car receives premium care - anytime, anywhere in Gurgaon.
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 
-@@Common Challenges in Gurgaon's Car Service@@
+export const whyChooseUsData = () => {
+  const selectedCity = useSelector(
+    (state: RootState) => state?.city?.selectedCity
+  );
+
+  return {
+    title: `%%Why Choose %%##VehicleCare ##%%for Car Services in ${selectedCity}?%%`,
+    text: `
+Struggling with unreliable **car repair services **or a lack of trustworthy **car mechanics in ${selectedCity}**? VehicleCare is here to simplify car care for you. With state-of-the-art car workshops and the convenience of doorstep car services, we ensure your car receives premium care - anytime, anywhere in ${selectedCity}.
+
+@@Common Challenges in ${selectedCity}'s Car Service@@
 🔧 $$Inconsistent Service Standards -$$ You never know what to expect, as service quality can vary from one workshop to another.
 🗣️ $$Communication Barriers -$$ Waiting in the dark for updates on repair status or costs can be frustrating and stressful.
 💸 $$Hidden Charges -$$ Surprise fees and unclear bills break trust and cause stress.
@@ -23,4 +31,5 @@ Struggling with unreliable **car repair services **or a lack of trustworthy **ca
 ❄️ $$AC Servicing -$$ Stay cool with our AC repairs, refrigerant refills, and leak detection services to ensure optimum performance.
 🚨 $$24/7 Roadside Assistance -$$ Be prepared for any situation—flat tyres, breakdowns, or dead batteries—our team is just a call away.
 🛠️ $$Customized Maintenance Plans -$$ Tailor-made maintenance plans to ensure long-term care health while saving you time and money.`,
+  };
 };

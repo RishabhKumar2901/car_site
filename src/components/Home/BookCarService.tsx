@@ -3,11 +3,16 @@ import ImageSlider from "../ImageSlider";
 import { imageSliderData } from "../../static/imageSliderData";
 import { parseFormattedText } from "../../utils/parseFormattedText";
 import { bookCarServiceData } from "../../static/HomeData/bookCarServiceData";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 
 const BookCarService = () => {
   const [car, setCar] = useState("");
   const [mobile, setMobile] = useState("");
   const [errors, setErrors] = useState<{ car?: string; mobile?: string }>({});
+  const selectedCity = useSelector(
+    (state: RootState) => state?.city?.selectedCity
+  );
 
   const handleSubmit = () => {
     const newErrors: { car?: string; mobile?: string } = {};
@@ -33,7 +38,7 @@ const BookCarService = () => {
         <div className="text-[2rem] font-bold leading-10">
           Experience Premier <br />
           Car Care Services in <br />
-          <span className="text-[#ed1c24]">Gurgaon</span>{" "}
+          <span className="text-[#ed1c24]">{selectedCity}</span>{" "}
         </div>
 
         <input

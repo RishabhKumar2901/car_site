@@ -4,13 +4,23 @@ import { navbarData } from "../static/navbarData";
 import { useNavigate } from "react-router-dom";
 import { City } from "../static/HomeData/cityData";
 import CityModal from "./Home/CityModal";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../redux/store";
+import { setCity } from "../redux/slices/citySlice";
 
 const Navbar: React.FC = () => {
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [showDropdown, setShowDropdown] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
-  const [selectedCity, setSelectedCity] = useState<City | null>(null);
+  const selectedCity = useSelector(
+    (state: RootState) => state?.city?.selectedCity
+  );
+  const dispatch = useDispatch();
+
+  const handleSelectCity = (city: City) => {
+    dispatch(setCity(city));
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -39,9 +49,14 @@ const Navbar: React.FC = () => {
             className="w-[10.5rem] h-[2.6rem]"
           />
         </div>
-        <div className="flex items-center cursor-pointer" onClick={() => setShowModal(true)}>
+        <div
+          className="flex items-center cursor-pointer"
+          onClick={() => setShowModal(true)}
+        >
           <div className="text-[#ec262e] font-semibold">
-          {selectedCity?.name || "Choose City"}</div>&nbsp;
+            {selectedCity || "Choose City"}
+          </div>
+          &nbsp;
           <div className="w-4 h-4 rotate-90">
             <svg
               viewBox="0 0 24 24"
@@ -49,8 +64,8 @@ const Navbar: React.FC = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M8.29289 4.29289C8.68342 3.90237 9.31658 3.90237 9.70711 4.29289L16.7071 11.2929C17.0976 11.6834 17.0976 12.3166 16.7071 12.7071L9.70711 19.7071C9.31658 20.0976 8.68342 20.0976 8.29289 19.7071C7.90237 19.3166 7.90237 18.6834 8.29289 18.2929L14.5858 12L8.29289 5.70711C7.90237 5.31658 7.90237 4.68342 8.29289 4.29289Z"
                 fill="#ec262e"
                 stroke="#ec262e"
@@ -120,7 +135,7 @@ const Navbar: React.FC = () => {
       {showModal && (
         <CityModal
           onClose={() => setShowModal(false)}
-          onSelectCity={(city) => setSelectedCity(city)}
+          onSelectCity={(city) => handleSelectCity(city)}
         />
       )}
     </div>
