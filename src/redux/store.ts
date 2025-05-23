@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 import cityReducer from './slices/citySlice';
+import carSelectionReducer from './slices/carSelectionSlice';
 import {
   persistStore,
   persistReducer,
@@ -15,12 +16,13 @@ import storage from 'redux-persist/lib/storage';
 
 const rootReducer = combineReducers({
   city: cityReducer,
+  carSelection: carSelectionReducer,
 });
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['city'],
+  whitelist: ['city','carSelection'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -3,16 +3,38 @@ import ImageSlider from "../ImageSlider";
 import { imageSliderData } from "../../static/imageSliderData";
 import { parseFormattedText } from "../../utils/parseFormattedText";
 import { bookCarServiceData } from "../../static/HomeData/bookCarServiceData";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
+import CarModal from "./CarModal";
+import {
+  setBrand,
+  setModel,
+  setVariant,
+} from "../../redux/slices/carSelectionSlice";
 
 const BookCarService = () => {
-  const [car, setCar] = useState("");
+  const selection = useSelector((state: RootState) => state?.carSelection);
+  const [car, setCar] = useState(
+    selection?.brand && selection?.model && selection?.variant
+      ? `${selection.brand} ${selection.model} ${selection.variant}`
+      : ""
+  );  
   const [mobile, setMobile] = useState("");
   const [errors, setErrors] = useState<{ car?: string; mobile?: string }>({});
   const selectedCity = useSelector(
     (state: RootState) => state?.city?.selectedCity
   );
+  const [showPopup, setShowPopup] = useState(false);
+  const dispatch = useDispatch();
+
+  const handleSelectCar = async (car: any) => {
+    await dispatch(setBrand(car?.brand));
+    await dispatch(setModel(car?.model));
+    await dispatch(setVariant(car?.variant));
+    setCar(`${car?.brand} ${car?.model} ${car?.variant}`);
+
+    if (errors?.car) setErrors((prev) => ({ ...prev, car: undefined }));
+  };
 
   const handleSubmit = () => {
     const newErrors: { car?: string; mobile?: string } = {};
@@ -47,10 +69,8 @@ const BookCarService = () => {
           }`}
           placeholder="Select Your Car"
           value={car}
-          onChange={(e) => {
-            setCar(e.target.value);
-            if (errors.car) setErrors((prev) => ({ ...prev, car: undefined }));
-          }}
+          onClick={() => setShowPopup(true)}
+          readOnly
         />
         {errors.car && (
           <span className="text-red-500 text-sm mt-1 ml-5">{errors.car}</span>
@@ -65,7 +85,8 @@ const BookCarService = () => {
           onChange={(e) => {
             if (!/^\d*$/.test(e.target.value)) return;
             setMobile(e.target.value);
-            if (errors.mobile) setErrors((prev) => ({ ...prev, mobile: undefined }));
+            if (errors.mobile)
+              setErrors((prev) => ({ ...prev, mobile: undefined }));
           }}
         />
         {errors.mobile && (
@@ -100,6 +121,15 @@ const BookCarService = () => {
       <div className="mt-2 xl:mt-0 w-full lg:max-w-3xl xl:max-w-4xl order-1 lg:order-2 mb-10 lg:mb-0 px-2">
         <ImageSlider imageData={imageSliderData?.bookCarServiceData} />
       </div>
+
+      {showPopup && (
+        <CarModal
+          onClose={() => setShowPopup(false)}
+          onSave={(brand, model, variant) =>
+            handleSelectCar({ brand, model, variant })
+          }
+        />
+      )}
     </div>
   );
 };
