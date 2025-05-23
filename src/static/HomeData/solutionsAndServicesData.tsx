@@ -7,14 +7,14 @@ import service9 from "../../assets/service9.png";
 import service10 from "../../assets/service10.png";
 
 export const solutionsAndServicesData = [
-  { imageUrl: service1, serviceName: "Car Service", directedUrl: "/#" },
-  { imageUrl: service5, serviceName: "Dent Paint", directedUrl: "/#" },
+  { imageUrl: service1, serviceName: "Car Service", directedUrl: "/car-service" },
+  { imageUrl: service5, serviceName: "Dent Paint", directedUrl: "/car-service" },
   {
     imageUrl: service7,
     serviceName: "Insurance Claim",
     directedUrl: "/insurance-claim",
   },
-  { imageUrl: service6, serviceName: "Custom Repair", directedUrl: "/#" },
+  { imageUrl: service6, serviceName: "Car Repair", directedUrl: "/car-service" },
   { imageUrl: service10, serviceName: "EV", directedUrl: "/ev" },
   { imageUrl: service9, serviceName: "Warranty", directedUrl: "/warranty" },
   { imageUrl: service8, serviceName: "AMC", directedUrl: "/amc" },
