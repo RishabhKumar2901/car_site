@@ -10,7 +10,7 @@ const CarSelectionModal: React.FC<Props> = ({ onClose, onSave }) => {
   const [step, setStep] = useState<"brand" | "model" | "variant">("brand");
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
   const [selectedModel, setSelectedModel] = useState<string | null>(null);
-  const [selectedVariant, setSelectedVariant] = useState<string | null>(null);
+  const [_, setSelectedVariant] = useState<string | null>(null);
   const [search, setSearch] = useState("");
 
   const handleSelect = (value: string) => {
